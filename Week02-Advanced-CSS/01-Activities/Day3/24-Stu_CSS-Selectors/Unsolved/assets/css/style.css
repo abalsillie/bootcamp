@@ -73,6 +73,10 @@ a[href$='.css']::after{
   content: 'EMOJI'
 }
 
+a[href$=".css"] ::after{
+  content: EMOJI;
+}
+
 @media screen and (max-width: 768px) {
   header {
     flex-direction: column;
