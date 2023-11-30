@@ -27,7 +27,9 @@ main {
 .card {
   /* A flex-basis of 200px sets the starting width */
   /* A flex-grow value of 1 allows the elements to evenly grow to fill the remaining space */
+  /* Start at 200px */
   flex: 1 0 200px;
+  /* Value it can grow to=1 and shrink to=0 */
   padding: 10px;
   text-align: center;
   border-style: solid;

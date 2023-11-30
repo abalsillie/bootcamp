@@ -86,9 +86,11 @@ button {
 }
 
 /* What does this CSS rule do and what does moz and webkit represent? */
+/* Moz is short for Mozilla is for Firefox web browser. Webkit is for Chrome and Safari. It is adding a background image from our image directory, telling it not to repeat, positioned on the right, and contain shrinks/ enlarges the image to specific area*/
 select {
   /* -moz-appearance: none;
   -webkit-appearance: none; */
+  /* Means to please not apply browser-specific styling */
   appearance: none;
   background-image: url("../images/arrow.png");
   background-repeat: no-repeat;
@@ -113,11 +115,13 @@ select:hover, button:hover {
 }
 
 /* What does this pseudo-class mean? */
+/* Adding border to box on the right hand side of 5px*/
 .text-input:focus {
   border-right-width: 5px;
 }
 
 /* What does this pseudo-class mean? */
+/* When placeholder text is in, have dash boarder on right as above */
 .text-input:placeholder-shown {
   border-style: dashed;
 }
@@ -137,12 +141,14 @@ select:hover, button:hover {
 }
 
 /* What does this selector do? */
+/* When tick checkbox, find label child and apply colour and font */
 .checkbox:checked + label {
   color: #999999;
   font-style: italic;
 }
 
 /* What does this selector do? */
+/* After the label, show 'thanks' message */
 .checkbox:checked + label::after {
   margin-left: 10px;
   font-size: 90%;

@@ -60,7 +60,47 @@ article p {
 }
 
 /* TODO: Style the term/phrase - underline, black text, grab cursor */
+span.style-tooltip {
+  text-decoration: underline;
+  position: relative;
+}
 
+span.style-tooltip::before{
+content: "This is our stylesheet file";
+line-height: 40px;
+padding: 10px;
+font-size: 14px;
+position: absolute;
+z-index:1;
+background-color: black;
+color: white;
+top: -100px;
+display: none;
+}
+
+span.style-tooltip:hover::before{
+  display: block;
+}
+/*
+#css-span{
+  text-decoration: underline;
+  color: black;
+  position: relative;
+}
+
+#css-span:hover::after{
+  content: "This is our stylesheet file";
+  line-height: 40px;
+  padding: 10px;
+  font-size: 14px;
+  position: absolute;
+  z-index:1;
+  background-color: black;
+  color: white;
+  top: -100px;
+  display: none;
+}
+Chee's work */ 
 /* TODO: Position tooltip above the term/phrase, same color as header and nav links, no border-radius, smaller font size */
 
 aside {
