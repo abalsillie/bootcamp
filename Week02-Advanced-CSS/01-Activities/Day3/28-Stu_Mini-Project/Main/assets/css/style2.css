@@ -1,0 +1,79 @@
+:root {
+    --black:#33393f;
+    --light-blue:#2aefcb;
+    --white:#e0eae4;
+    --pink:#e866ec;
+   }
+
+::selection{
+    background-color: var(--light-blue);
+}
+   
+   .row{
+     display: flex;
+     flex-wrap: wrap;
+     flex-direction: row;
+   }
+   
+   .justify-center{
+     justify-content: center;
+   }
+   
+   .card-column{
+     flex: 1 0 100%;
+     padding: 1.5rem;
+     margin-bottom: 0.5rem;
+   }
+   
+   @media screen and (min-width: 768px) {
+     .card-column{
+       flex: 1 0 50%;
+     }
+   }
+   
+   @media screen and (min-width: 992px) {
+     .card-column{
+       flex: 1 0 33%;
+     }
+   }
+   
+   body {
+    background-color: var(--black);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  }
+  
+   h1, h2, p {
+     color: var(--pink);
+   }
+
+   h1{
+    font-size: 4rem;
+   }
+
+   h2{
+    font-size: 3.5rem;
+   }
+   
+   code {
+     color: var(--white);
+     background-color: var(--pink);
+   }
+
+   .code-block{
+    background-image: linear-gradient(
+    rgba(232, 102, 236, 0.3) 0%,
+    rgba(232, 102, 236, 0.6) 100%);
+   }
+
+   .card-header{
+    border: 2px solid var(--white);
+    border-radius: 10px;
+    position: relative;
+    margin-left: 0.5em;
+   }
+
+   .code-card {
+    border: 2px dashed var(--white);
+    min-height: 100%;
+   }
