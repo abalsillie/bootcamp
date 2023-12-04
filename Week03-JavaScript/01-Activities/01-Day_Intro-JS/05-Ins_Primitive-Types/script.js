@@ -1,12 +1,13 @@
 //Primitive data types include undefined, string, number and boolean
-//Undefined variables haven't been assigned values yet.
+//Undefined variables haven't been assigned values yet, as below
 var myUndefined;
 
 // A string is a series of characters and is surrounded by quotes 
-var myStringWelcome = "Hello World"; 
+var myStringWelcome = "Hello World";
 var myStringPassword = "865Password!2020";
 
-// A number can be either an integer or a decimal  
+// There are about 7 primitive variables, can't be changed only reassigned: main ones are strings, numbers, Booleans, undefined
+// A number can be either an integer or a decimal   strings, numbers, Booleans, undefined
 var myNumberInt = 100;
 var myNumberDecimal = 100.100;
 
