@@ -2,7 +2,14 @@ var hungerLevel = 50;
 var isLunchTime = true;
 var lunchBill = 11;
 
-// If statement
+// If statement is this, do this, else, do this
+// syntax = if (statemennt) {
+//} else if (statement) {
+//} else (statement) {
+  
+//}
+//! makes the opposite true
+
 // Evaluates to true so "Hungry" is logged
 
 if (hungerLevel >= 50) {

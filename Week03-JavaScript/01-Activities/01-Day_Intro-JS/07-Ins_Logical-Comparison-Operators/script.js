@@ -13,12 +13,16 @@ console.log(a % b);
 
 // Comparison operators combine with strings, booleans and numbers to form an expression that evaluates to true or false
 // Compares equality
-
+// One equal sign, assigns a value, 2 equal signs compares equality
+// Loose equality
 console.log(b == c);
+// b doesn't equal c
 console.log(b != c);
 
-// Compares equality and type (strict equality)
+// Compares equality and type 
+// Strict equality
 console.log(b === c);
+// b is same value but different type, or same type different value
 console.log(b !== c);
 
 // Greater than or less than
@@ -33,6 +37,7 @@ console.log(a >= b);
 var expression1 = (b == c);
 var expression2 = (a > b);
 
+// Comparison operators, logging the outcome of this expression
 // Evaluates to true if expression1 AND expression2 are both true, otherwise false
 
 console.log(expression1 && expression2);
@@ -47,4 +52,5 @@ console.log(expression1 || expression2);
 console.log(expression2);
 
 // Returns false
+// ! returns the opposite of the truth
 console.log(!expression2);
