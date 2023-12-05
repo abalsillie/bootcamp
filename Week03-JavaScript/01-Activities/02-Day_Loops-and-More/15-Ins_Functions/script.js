@@ -1,5 +1,6 @@
 // Functions are reusable blocks of code that perform a specific task
 // This is a function declaration 
+// Declaring the function to be used later
 function declareHello() { 
   console.log("Hello, I am a function declaration.");
   console.log("-----------------------------------");
@@ -8,6 +9,7 @@ function declareHello() {
 }
 
 // This is a function expression
+// Empty parenthesis, therefore variables undeclared parametres
 var expressHello = function() { 
   console.log("Hello, I am a function expression.");
   console.log("-----------------------------------");
@@ -15,6 +17,7 @@ var expressHello = function() {
 };
 
 // Functions must be called to execute
+// Envoking the code
 declareHello(); 
 expressHello();
 
