@@ -1,155 +1,4 @@
-
-/* Content elements */
-
-.large-card {
-    width: 600px;
-    height: 600px;
-    text-align: center;
-  }
   
-  /* Left hand section elements */
-  p {
-    font-size: 16px;
-  }
-  
-  .content {
-    width: 75%;
-    display: inline;
-    margin-left: 20px;
-  }
-  
-  .float-left {
-    float: left;
-    margin-right: 25px;
-  }
-  
-  .float-right {
-    float: right;
-    margin-left: 25px;
-  }
-  
-  .search-engine-optimization, .online-reputation-management, .social-media-marketing {
-    margin-bottom: 20px;
-    padding: 50px;
-    height: 300px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: #0072bb;
-    color: #ffffff;
-  }
-  
-  .search-engine-optimization img, .online-reputation-management img, .social-media-marketing img {
-    max-height: 200px;
-  }
-  
-  .search-engine-optimization h2, .online-reputation-management h2, .social-media-marketing h2 {
-    margin-bottom: 20px;
-    font-size: 36px;
-  }
-  /* Right banner elements */
-  .benefits {
-    margin-right: 20px;
-    padding: 20px;
-    clear: both;
-    float: right;
-    width: 20%;
-    height: 100%;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: #2589bd;
-  }
-  
-  .benefit-lead, .benefit-brand, .benefit-cost {
-    margin-bottom: 32px;
-    color: #ffffff;
-  }
-  
-  .benefit-lead h3, .benefit-brand h3, .benefit-cost h3 {
-    margin-bottom: 10px;
-    text-align: center;
-  }
-  
-  .benefit-lead img, .benefit-brand img, .benefit-cost img {
-    display: block;
-    margin: 10px auto;
-    max-width: 150px;
-  }
-  /* Footer elements */
-  footer {
-    text-align: right;
-  }
-  
-  footer h3 {
-    font-size: 20px;
-  }
-  
-  footer nav ul {
-    list-style-type: none;
-    text-decoration-line: underline;
-  }
-  
-  
-  ::selection {
-    background-color: var(--bright-turquoise);
-  }
-  
-  :hover{
-  
-  
-  }
-  
-  
-  
-    
-    /* set content highlight color and background */
-  
-    html {
-      /* set 1rem to 10px instead of native 16px to make it easier to calculate font-size values for the rest of the page (e.g. 1.6rem is 16px, 2.0rem is 20px, etc.) */
-      font-size: 62.5%;
-    }
-    
-    body {
-      /* Sans Serif font stack is implemented to help select the best font for each type of computer operating system */
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
-        Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-    
-      /* set body font size to 1.75rem, which is 1.75x more than the font-size of 10px, making it 17.5px  */
-      font-size: 1.75rem;
-      line-height: 1.5;
-      color: var(--gin);
-      background-color: var(--outer-space);
-    }
-  
-  
-    
-    code {
-      /* Monospace font stack is used for our code blocks to make it look more like code */
-      font-family: Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console',
-        'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
-        'Liberation Mono', 'Nimbus Mono L', Monaco, 'Courier New', Courier,
-        monospace;
-    }
-    
-    header {
-      width: 96%;
-      margin: 0 auto;
-      padding: 2.5rem;
-      text-align: center;
-    }
-    
-    header h1.page-title {
-      padding: 1rem 1.2rem;
-      font-size: 4.5rem;
-    }
-    
-    main {
-      width: 96%;
-      margin: 2rem auto;
-    }
-    
-    footer {
-      margin: 1.5rem;
-      text-align: center;
-    }
-    
     /* create our main grid with flexbox, use negative margins to offset the padding on the .card-column class */
     .row {
       display: flex;
@@ -256,4 +105,24 @@
         flex: 0 0 33.333%;
         max-width: 33.333%;
       }
+    }
+
+
+
+
+    FLEX
+    .small-cards {
+      flex: 1 0 0;
+      padding: 10px;
+      border: 5px solid var(--turquoise);
+    }
+    
+    .small-cards h4 {
+      font-size: 25px;
+      padding: 20px;
+      background-color: var(--turquoise);
+      color: var(--navy);
+    
+    .small-cards img {
+      min-width: 400px;
     }
