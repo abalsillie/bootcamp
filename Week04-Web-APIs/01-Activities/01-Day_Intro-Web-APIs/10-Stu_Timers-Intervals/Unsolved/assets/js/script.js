@@ -25,7 +25,7 @@ function countdown() {
     } else {
       timerEl.textContext = "";
       clearInterval(timeInterval);
-      displayMessage() // As defined above
+      displayMessage() // As defined below
     }
   }, 1000);
 }
