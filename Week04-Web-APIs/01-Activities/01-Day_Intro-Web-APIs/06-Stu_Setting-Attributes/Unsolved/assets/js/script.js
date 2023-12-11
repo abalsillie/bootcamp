@@ -21,3 +21,15 @@ site3El.children[1].children[0].setAttribute("alt", "women working");
 site3El.children[1].children[0].setAttribute("style", "padding:10px;");
 
 // Write Your Code Below
+
+// All the h4 elements are selected and stored in a single variable
+// querySelectorAll goes straight to the HTML and is trying to find all the h4 elements
+var sites = document.querySelectorAll("h4");
+
+// The text of each h4 is set to `blue`, the font size is `30px`, the text is `bold`, the padding to the left is set to `10px` and the margin is set to `0`
+// A quicker way to set attributes is to create a for loop instead
+// sites.children[0]... 1, 2, 3 etc
+for (var i = 0; i < sites.length; i++) {
+    sites[i].setAttribute("style", "color:blue; font-weight:bolder; font-size:30px; padding-left:10px; margin:0");
+   }
+   

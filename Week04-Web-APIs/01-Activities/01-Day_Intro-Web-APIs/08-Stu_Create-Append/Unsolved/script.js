@@ -34,4 +34,31 @@ nameEl.setAttribute("style", "font-size:25px; text-align:center;");
 kittenEl.setAttribute("style", "font-size:25px; text-align:center;");
 favoriteEl.setAttribute("style", "font-size:20px;");
 
-// TODO: Add ordered list items containing four favorite foods
+// Ordered list containing four favorite foods is visible in the HTML below the text "My favorite foods are:"
+var list = document.createElement('ol');
+
+// Set background colour by setting attribute
+list.setAttribute("style","background: blue; padding: 20px");
+
+var listItem1 = document.createElement('li');
+listItem1.setAttribute("style","colour: white; background:green; padding: 5px; margin-left: 35px")
+var listItem2 = document.createElement('li');
+listItem2.setAttribute("style","colour: white; background:green; padding: 5px; margin-left: 35px")
+var listItem3 = document.createElement('li');
+listItem3.setAttribute("style","colour: white; background:green; padding: 5px; margin-left: 35px")
+var listItem4 = document.createElement('li');
+listItem4.setAttribute("style","colour: white; background:green; padding: 5px; margin-left: 35px")
+
+// Define list items
+listItem1.textContent = "Ramen";
+listItem2.textContent = "Pizza";
+listItem3.textContent = "Pasta";
+listItem4.textContent = "Ice Cream";
+
+// Append items to list items (can't be to the body as it's not the direct parent)
+list.appendChild(listItem1);
+list.appendChild(listItem2);
+list.appendChild(listItem3);
+list.appendChild(listItem4);
+
+favouriteEl.appendChild(list);
