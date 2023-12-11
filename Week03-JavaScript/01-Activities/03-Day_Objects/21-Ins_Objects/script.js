@@ -5,8 +5,15 @@ var planet = {
   age: "4.543 billion years",
   moons: 1,
   isPopulated: true,
-  population: "7.594 billion"
+  population: "7.594 billion",
+  // Can add arrays
+  array: [],
+  "this is my property": true,
 };
+
+for (var x in planet) {
+  
+}
 
 // To access a property's value that is a string, number or boolean, use the object's name and the associated key	
 // Uses dot notation and logs "Earth"	
