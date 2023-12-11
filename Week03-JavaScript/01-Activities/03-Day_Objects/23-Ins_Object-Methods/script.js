@@ -25,5 +25,7 @@ console.log(planet["neighboringPlanets"][0]);
 
 // To call a method, use the name of the object and the key. Don't forget the ()!
 planet.tellFunFact();
+
+// Envoke show warning, pulls from like 14
 planet.showWarning();
   
