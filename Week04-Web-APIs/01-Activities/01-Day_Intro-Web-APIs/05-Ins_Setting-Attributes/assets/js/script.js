@@ -1,12 +1,17 @@
 // Access multiple elements using .querySelectorAll()
+// Using element selectors- all the div, p and img elements
+// These describe arrays- because multiple sections in one div, p and img
  var divTags = document.querySelectorAll("div");
  var pTags = document.querySelectorAll("p");
  var imgEl = document.querySelectorAll("img");
 
 // Access element by ID using .querySelector()
+// Grabbing  ID="change2"
+// These grab a specific element
  var changeP = document.querySelector("#change2");
 
 // Sets first pTags to have a font-size of 40px
+// Set attribute, allows you to set any attribute you like, and multiple of them
  pTags[0].setAttribute("style", "font-size: 40px;");
 
 // Sets changeP to have multiple style attributes
