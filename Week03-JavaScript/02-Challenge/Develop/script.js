@@ -2,16 +2,17 @@
 var generateBtn = document.querySelector("#generate");
 
 // Log character arrays
-var lowercaseList = ["a","b","c","d","e","f","g","h","i","j"];
-var uppercaseList = ["A","B","C","D","E","F","G","H","I","J"];
-var numericalList = [0,1,2,3,4,5,6,7,8,9];
-var specialList = ["!","@","#","$","%","&","*","(",")"];
+var lowercaseList = ['a','b','c','d','e','f','g','h','i','j'];
+var uppercaseList = ['A','B','C','D','E','F','G','H','I','J'];
+var numericalList = ['0','1','2','3','4','5','6','7','8','9'];
+var specialList = ['!','@','#','$','%','&','*','(',')'];
 
 // Generating the password text through the generatePassword function, by selecting the first HTML element with ID "password"
 function writePassword() {
  var password = generatePassword();
+ console.log(password);
  var passwordText = document.querySelector("#password");
- passwordText.value = password;
+ passwordText.value = password.join(""); // Character array to string
 }
 
 // In the event of a click, write password function is envoked
@@ -66,16 +67,11 @@ function generatePassword() {
     window.alert("Please select at least one character type for your password");
     return "Please select at least one character type for your password";
   };
-
-  // Random variable index is selected
-  var i = Math.floor(Math.random() * possibleChoices.length);
-  var computerChoice = possibleChoices[i];
-  console.log(computerChoice);
  
   // For loop is created for the length of password selected
+  var password = [];
   for (var i = 0; i < userChoice; i++) { 
-    password= possibleChoices[Math.floor(Math.random() * possibleChoices.length)];
+    password[i] = possibleChoices[Math.floor(Math.random() * possibleChoices.length)];
   };
-
-  console.log(password);
+  return password;
 }
