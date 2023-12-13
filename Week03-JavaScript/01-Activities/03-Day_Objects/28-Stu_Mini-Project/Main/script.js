@@ -1,53 +1,62 @@
-// Alert, conform, prompt- built in elements to JS
-// Step 1: provide user a box to enter R, P or S
-// Step 2: allow input for R, P, S by storing them into variables
-// Step 3: generate R, P or S for the computer
-// Step 4: generate the result- winner or loser
-// Step 5: show the user the result
-// Step 6: repeat the game until user says to stop
-// Step 7: display total wins, ties, and losses after each round
-
-var options = ["R", "P", "S"]
-options[0]
-options[1]
-options[2]
-
-var wins =0;
+var wins = 0;
 var ties = 0;
 var losses = 0;
 
-var playGame =  function() { // Function expression
-    var userChoice = window.prompt("Enter R, P or S"); // Whatever value the user enters gets stored in 'user choice'
-    console.log(userChoice);
+// Array of options for computer to pick from
+var options = ["R", "P", "S"];
 
-    if(userChoice) {
-        return;  // If it's not a defined value or if it's null, it will exit the function
-    };
-    
-    userChoice.toUpperCase(); // Changing all input to upper case just to be sure
+var playGame = function() {
+  // Ask user for their choice
+  var userChoice = window.prompt("Enter R, P, or S:");
 
-    var index = math.floor(math.random() + options.length); // math random generates random number
+  // If user pressed Cancel, immediately end function
+  if (!userChoice) {
+    return;
+  }
 
-    alert("The computer chose " + computerChoice)
-    console.log(index)
-    
-    if(computerChoice === userChoice) {
-        ties++;
-        window.alert("It's a tie!");
-        else if ((userChoice == "R" && computerChoice == "S") || (userChoice == "S" && computerChoice == "P") || (userChoice == "P" && computerChoice == "R"))
-        wins++;
-        window.alert("You win");
-        else (losses++);
-        window.alert("You lose");
-    };
+  // Convert to uppercase to make comparisons easier
+  userChoice = userChoice.toUpperCase();
 
-        window.alert("Stats \n: win.. losses.. ties..");
+  // Get random index from array of options
+  var index = Math.floor(Math.random() * options.length);
 
-        var playAgain = window.confirm("Play again?");
+  var computerChoice = options[index];
 
-        if(playAgain) {   
-        }
+  window.alert("The computer chose " + computerChoice);
 
+  // If choices are the same, it's a tie
+  if (userChoice === computerChoice) {
+    ties++;
+    window.alert("It's a tie!");
+
+  // Check every win condition for the player
+  } else if (
+    (userChoice === "R" && computerChoice === "S") || 
+    (userChoice === "P" && computerChoice === "R") || 
+    (userChoice === "S" && computerChoice === "P")
+  ) {
+    wins++;
+    window.alert("You win!");
+
+  // If above conditions failed, assume player lost
+  } else {
+    losses++;
+    window.alert("You lost!");
+  }
+
+  // Print stats with line breaks
+  window.alert(
+    "Stats:\nWins: " + wins + "\nLosses: " + losses + "\nTies: " + ties
+  );
+
+  // Ask user to play again
+  var playAgain = window.confirm("Play again?");
+
+  // If user pressed OK, run the function again
+  if (playAgain) {
+    playGame();
+  }
 };
 
+// Run the game for the first time
 playGame();
