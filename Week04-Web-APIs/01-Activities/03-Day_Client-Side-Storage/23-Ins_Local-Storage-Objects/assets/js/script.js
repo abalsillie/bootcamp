@@ -1,3 +1,5 @@
+// store various info that relates to eachother in one object- e.g. one person's name and phone number
+
 var student = document.getElementById("student-names");
 var grade = document.getElementById("grades");
 var comment = document.getElementById("msg");
@@ -12,7 +14,7 @@ var studentGrade = {
   comment: comment.value.trim()
 };
 
-localStorage.setItem("studentGrade", JSON.stringify(studentGrade));
+localStorage.setItem("studentGrade", JSON.stringify(studentGrade)); // turn student grade into a string
 renderMessage();
 
 });
@@ -24,3 +26,4 @@ function renderMessage() {
     " received a/an " + lastGrade.grade
   }
 }
+

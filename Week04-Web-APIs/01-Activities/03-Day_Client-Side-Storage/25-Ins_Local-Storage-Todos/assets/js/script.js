@@ -3,7 +3,7 @@ var grade = document.getElementById("grades");
 var comment = document.getElementById("msg");
 var saveButton = document.getElementById("save");
 
-function saveLastGrade() {
+function saveLastGrade() { // creates a variable of an object, with all different elements- name, grade and comment
   // Save related form data as an object
   var studentGrade = {
     student: student.value,
@@ -14,21 +14,22 @@ function saveLastGrade() {
   localStorage.setItem('studentGrade', JSON.stringify(studentGrade));
 }
 
-function renderLastGrade() {
+function renderLastGrade() { // next function turns string back into an object
   // Use JSON.parse() to convert text to JavaScript object
   var lastGrade = JSON.parse(localStorage.getItem('studentGrade'));
   // Check if data is returned, if not exit out of the function
   if (lastGrade !== null) {
     document.getElementById('saved-name').innerHTML = lastGrade.student;
     document.getElementById('saved-grade').innerHTML = lastGrade.grade;
-    document.getElementById('saved-comment').innerHTML = lastGrade.comment;
+    document.getElementById('saved-comment').innerHTML = lastGrade.comment; // inner HTML sets HTML
+
   }
 }
 
-saveButton.addEventListener('click', function (event) {
-  event.preventDefault();
-  saveLastGrade();
-  renderLastGrade();
+saveButton.addEventListener('click', function (event) { // in event of a click...
+  event.preventDefault(); // prevents error
+  saveLastGrade(); // envokes furst function
+  renderLastGrade(); // envokes second function
 });
 
 // The init() function fires when the page is loaded
