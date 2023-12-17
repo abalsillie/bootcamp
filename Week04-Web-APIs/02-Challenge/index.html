@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" href="./assets/style.css"/>
+    <title>Short Quiz</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <h1 class="left-header">View Scores</h1>
+        <h1 id="timer-count" class="right-header">75</h1>
+        <h1 class="right-header">Time:</h1>      
+    </header>
+
+    <!-- Starter page -->
+    <div class="card" id="start">
+        <h2>Short Quiz Challenge</h2>
+        <p>Try to answer the following questions within the given time limit. Incorrect answers will reduce your remaining time by 10 seconds!</p>
+        <button class="button" id="start-button">Start</button>
+    </div>
+
+    <!-- Question 1 -->
+    <div class="card" id="question1" style="display: none;">
+        <h2>What colour is the sky?</h2>
+        <button class="button">1. Pink</button>
+        <button class="button">2. Red</button>
+        <button class="button">3. Green</button>
+        <button class="button">4. Blue</button>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="card" id="question2" style="display: none;">
+        <h2>What animal goes "moo"?</h2>
+        <button class="button">1. Cat</button>
+        <button class="button">2. Dog</button>
+        <button class="button">3. Cow</button>
+        <button class="button">4. Horse</button>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="card" id="question3" style="display: none;">
+        <h2>Which country has the largest population?</h2>
+        <button class="button">1. China</button>
+        <button class="button">2. India</button>
+        <button class="button">3. USA</button>
+        <button class="button">4. Russia</button>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="card" id="question4" style="display: none;">
+        <h2>In what habitat would you find a whale?</h2>
+        <button class="button">1. Jungle</button>
+        <button class="button">2. Ocean</button>
+        <button class="button">3. Grasslands</button>
+        <button class="button">4. Swamps</button>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="card" id="question5" style="display: none;">
+        <h2>What type of angle is a 50 degree angle?</h2>
+        <button class="button">1. Reflex</button>
+        <button class="button">2. Acute</button>
+        <button class="button">3. Obtuse</button>
+        <button class="button">4. Complete</button>
+    </div>
+
+    <div id="correct"><h3>Correct!</h3></div>
+
+    <div id="incorrect"><h3>Incorrect</h3></div>
+
+    <!-- Finished page -->
+    <div class="card" style="display: none;">
+        <h2>All done!</h2>
+        <p>Your final score is X</p>
+        <form>
+            <label>Enter initials: </label>
+            <input type="text">
+            <button class="button">Submit</button>
+        </form>
+    </div>
+
+    <!-- Highscores page -->
+    <div class="card" style="display: none;">
+        <h2>Highscores</h2>
+        <button class="button">Go Back</button>
+        <button class="button">Clear Highscores</button>
+    </div>
+
+    <!-- Final page -->
+    <div class="card" style="display: none;">
+        <h2>Highscores</h2>
+        <button class="button">Go Back</button>
+        <button class="button">Clear Highscores</button>
+    </div>
+
+    <script src="./assets/script.js"></script>
+</body>
+
+</html>
