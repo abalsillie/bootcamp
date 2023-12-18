@@ -54,7 +54,7 @@ button {
     color: green;
     border-radius: 8px;
     margin: auto;
-    width: 15vw;
+    width: 40%;
     text-align: center;
     display: none;
 }
@@ -64,7 +64,7 @@ button {
     color: darkred;
     border-radius: 8px;
     margin: auto;
-    width: 15vw;
+    width: 40%;
     text-align: center;
     display: none;
 }
