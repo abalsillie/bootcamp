@@ -2,7 +2,7 @@ var alertButtonEl = $('#alert-btn');
 var themeButtonEl = $('#theme-btn');
 var lotteryButtonEl = $('#lottery-btn');
 var lotteryNumberEl = $('#lottery-number');
-var refreshButtonEl = $('#refresh-btn');
+var refreshButtonEl = $('#refresh-btn'); // 5 elements selecting IDs
 
 // light theme state
 var isDark = true;

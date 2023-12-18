@@ -19,7 +19,7 @@ titleEl.addClass('p-5');
 titleEl.css('border', 'rgb(122, 242, 242) 5px solid');
 
 // rootEl.appendChild(titleEl);
-rootEl.append(titleEl);
+rootEl.append(titleEl); // appending HTML
 
 // titleEl.append("Welcome to jQuery");
 rootEl.append('<h2>With jQuery we can:</h2>');
@@ -34,28 +34,30 @@ var abilities = [
   'much more',
 ];
 
-for (var i = 0; i < abilities.length; i++) {
+for (var i = 0; i < abilities.length; i++) { // for loop
   // Create a new `<li>` for each ability and its text content
-  var abilityEl = $('<li>');
+  var abilityEl = $('<li>'); // create list item
 
   // abilityEl.textContent = abilities[i];
-  abilityEl.text(abilities[i]);
-
+  abilityEl.text(abilities[i]); // add text to list item
+ 
   // `my-3` class adds margin on top and bottom
-  abilityEl.addClass('my-3');
+  abilityEl.addClass('my-3'); // add class to list item
 
   // Alternatively
   // var abilityEl = $("<li>" + abilities[i] + "</li>");
 
   // Add this new `<li>` to the `<div>` root element.
-  rootEl.append(abilityEl);
+  rootEl.append(abilityEl); // apend list item
 }
 
 // select all `<li>` elements on the page
 // document.querySelectorAll('li');
-console.log($('li'));
+console.log($('li')); // log the list item
 
 // Alternatively use the `$.each` method
 // $.each(abilities, function(i, ability) {
 //    rootEl.append("<li>" + ability + "</li>");
 // })
+
+// jquery provides different type of for loop
