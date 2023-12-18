@@ -18,15 +18,16 @@ function handleFormSubmit(event) {
   var selected = [];
 
   // Loop through checked options to store in array
+  // pushing everything from checked into selected array
   $.each(checkedEl, function () {
-    selected.push($(this).val());
+    selected.push($(this).val()); // this array, adding another element at the end
   });
-  console.log('Toppings: ', selected.join(', '));
+  console.log('Toppings: ', selected.join(', ')); // joining everything by comma and space
 
   // Clear input fields
-  $('input[type="text"]').val('');
+  $('input[type="text"]').val(''); // parsein with nothing inside, resets fields
   $('input[type="email"]').val('');
-  $('input[type="checkbox"]').prop('checked', false);
+  $('input[type="checkbox"]').prop('checked', false); // setting default property
 }
 
 // Submit event on the form
