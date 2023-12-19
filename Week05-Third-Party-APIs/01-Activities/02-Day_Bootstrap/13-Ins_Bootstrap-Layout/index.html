@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- 12 column layout, specify which size you're targetting -->
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,7 +39,7 @@
           reprehenderit velit?
         </p>
       </div>
-
+      <!-- bootstrap is mobile-focussed, so is layout for a smaller screen size -->
       <div class="col-12 col-md-4 col-lg-3">
         <h3>Sidebar Content</h3>
         <ul>
@@ -49,7 +51,7 @@
     </div>
   </section>
 
-  <!-- Four column layout -->
+  <!-- Four column layout, using flexbox in the background -->
   <section class="container my-5 bg-dark text-light">
     <div class="row">
       <div class="col-12 col-md-6 col-lg-3">
@@ -86,7 +88,7 @@
   <!-- Centered one column layout -->
   <section class="container my-5">
     <div class="row justify-content-center">
-      <div class="col-12 col-sm-8 col-lg-6">
+      <div class="col-12 col-sm-8 col-lg-6"> <!-- If small, takes up 100%, if med takes up 8/12, if large 6/12 -->
         <h3>Centered Content</h3>
         <h5>6/12 columns on large, 8/12 columns on smaller screens, 12/12 on phone</h5>
         <p>

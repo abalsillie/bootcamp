@@ -6,5 +6,21 @@
   --light: #fffaf7;
 }
 
+
+.custom-background {
+  background-color: var(--tan);
+}
+
+.custom-button {
+  background-color: var(--teal);
+  color: var(--brown);
+}
+
+.custom-button:hover {
+  background-color: var(--lightteal);
+  border-color: var(--brown);
+  color: var(--brown)
+}
+
 /* Add your custom class style definitions here */
 /* HINT: Apply CSS variables using `var(--brown)` syntax as your property value */
