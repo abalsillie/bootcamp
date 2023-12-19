@@ -72,25 +72,27 @@
     <div id="incorrect"><h3>Incorrect</h3></div>
 
     <!-- Finished page -->
-    <div class="card" style="display: none;">
-        <h2>All done!</h2>
-        <p>Your final score is X</p>
+    <div class="card" id="finish" style="display: none;">
+        <h2>The quiz is over!</h2>
+        <p>Your final score is: </p>
+        <p id="score"></p>
         <form>
-            <label>Enter initials: </label>
-            <input type="text">
-            <button class="button">Submit</button>
+            <label id="initials">Enter initials: 
+                <input type="text">
+            </label>
+            <button class="button" id="submit">Submit</button>
         </form>
     </div>
 
     <!-- Highscores page -->
-    <div class="card" style="display: none;">
+    <div class="card" id="highscores" style="display: none;">
         <h2>Highscores</h2>
         <button class="button">Go Back</button>
         <button class="button">Clear Highscores</button>
     </div>
 
     <!-- Final page -->
-    <div class="card" style="display: none;">
+    <div class="card" id="final" style="display: none;">
         <h2>Highscores</h2>
         <button class="button">Go Back</button>
         <button class="button">Clear Highscores</button>
