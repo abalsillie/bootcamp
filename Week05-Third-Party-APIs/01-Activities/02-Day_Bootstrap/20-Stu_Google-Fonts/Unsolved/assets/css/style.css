@@ -48,3 +48,11 @@
   background-color: var(--teal);
   color: var(--lightteal);
 }
+
+h1 {
+  font-family: "Silkscreen", sans-serif;
+}
+
+p {
+  font-family: "Rubik Lines", sans-serif;
+}
