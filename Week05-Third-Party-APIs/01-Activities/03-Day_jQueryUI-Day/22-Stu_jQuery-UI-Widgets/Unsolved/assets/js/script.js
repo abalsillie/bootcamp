@@ -29,8 +29,23 @@ var handleFormSubmit = function (event) {
 
 formEl.on('submit', handleFormSubmit);
 
-// Add Autocomplete widget here
-//
+// provide js link and css link (jquery UI uses CSS features)
+// autocomplete widget, select from list of skills (refer to link)
+$(function() {
+  var skillList = ['JS', 'HTML', 'CSS'];
+  $('#skill-name').autocomplete({ // selecting element with ID skill-name and changing it to autocomplete
+    source: skillList
+  });
+});
 
-// Add Datepicker widget here
-//
+// datepicker widget, select by month and year
+// $(document).ready(function(){
+  // insert jquery methods
+// });
+// OR
+$(function() {
+  $('#datepicker').datepicker({
+    changeMonth: true,
+    changeYear: true,
+  });
+});

@@ -22,11 +22,11 @@ function readProjectsFromStorage() {
     projects = [];
   }
   return projects;
-}
+} // saving object with 3 variables (line 95) into string and then convert back to an object
 
 // Takes an array of projects and saves them in localStorage.
 function saveProjectsToStorage(projects) {
-  localStorage.setItem('projects', JSON.stringify(projects));
+  localStorage.setItem('projects', JSON.stringify(projects)); // replacing old set item with new one
 }
 
 // Gets project data from local storage and displays it
@@ -45,8 +45,8 @@ function printProjectData() {
     var today = dayjs().startOf('day');
 
     // Create row and columns for project
-    var rowEl = $('<tr>');
-    var nameEL = $('<td>').text(project.name);
+    var rowEl = $('<tr>'); // selecting tr element
+    var nameEL = $('<td>').text(project.name); // selecting td element
     var typeEl = $('<td>').text(project.type);
     var dateEl = $('<td>').text(projectDate.format('MM/DD/YYYY'));
 
@@ -84,24 +84,24 @@ function handleDeleteProject() {
 }
 
 // Adds a project to local storage and prints the project data
-function handleProjectFormSubmit(event) {
-  event.preventDefault();
+function handleProjectFormSubmit(event) { // event is 'submit' see below line 115
+  event.preventDefault(); // prevent refresh
 
-  // read user input from the form
-  var projectName = projectNameInputEl.val().trim();
-  var projectType = projectTypeInputEl.val(); // don't need to trim select input
-  var projectDate = projectDateInputEl.val(); // yyyy-mm-dd format
+  // form input variables
+  var projectName = projectNameInputEl.val().trim(); // trim name incase of space as text field
+  var projectType = projectTypeInputEl.val(); // don't need to trim select input as is drop down
+  var projectDate = projectDateInputEl.val(); // date input
 
-  var newProject = {
+  var newProject = { // create a new object, makes it easier to save in local storage
     name: projectName,
     type: projectType,
     date: projectDate,
   };
 
-  // add project to local storage
-  var projects = readProjectsFromStorage();
-  projects.push(newProject);
-  saveProjectsToStorage(projects);
+  // add object to local storage
+  var projects = readProjectsFromStorage(); // calling function above (line 17) to load existing records
+  projects.push(newProject); // pushing new project to string, replacing in local storage
+  saveProjectsToStorage(projects); // function to save project to local storage
 
   // print project data
   printProjectData();
@@ -112,13 +112,13 @@ function handleProjectFormSubmit(event) {
   projectDateInputEl.val('');
 }
 
-projectFormEl.on('submit', handleProjectFormSubmit);
+projectFormEl.on('submit', handleProjectFormSubmit); // if event submit is triggered, then call handleProject function
 
 // Use jQuery event delegation to listen for clicks on dynamically added delete
 // buttons.
 projectDisplayEl.on('click', '.btn-delete-project', handleDeleteProject);
 
-displayTime();
-setInterval(displayTime, 1000);
+displayTime(); // calling display time function
+setInterval(displayTime, 1000); // setting interval to be 1000 miliseconds
 
 printProjectData();
