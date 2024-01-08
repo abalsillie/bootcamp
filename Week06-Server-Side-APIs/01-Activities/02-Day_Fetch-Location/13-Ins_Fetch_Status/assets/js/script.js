@@ -13,3 +13,8 @@ function getApi(requestUrlArg) {
 }
 
 getApi(requestUrl);
+
+// 300 = redirect
+// 400 = client side error
+// 500 = server side error
+// https://cheatography.com/kstep/cheat-sheets/http-status-codes/
