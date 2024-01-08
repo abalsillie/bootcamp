@@ -8,8 +8,12 @@ function getApi(requestUrl) {
       // Check the console first to see the response.status
       console.log(response.status);
       // Then write the conditional based on that response.status value
-      // Make sure to display the response on the page
+      if (response.status === 200) { // if status is running smoothly
+        responseText.textContent = response.status; // adding response text to element tag responseText
+      }
+      return response.json(); // return a response
     })
+    // Make sure to display the response on the page
     .then(function (data) {
       console.log(data);
     });

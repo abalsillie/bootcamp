@@ -16,3 +16,5 @@ fetch(badRequestUrl)
   .then(function (data) {
     console.log(data);
   });
+
+  // can open network tab in dev tools, tip to refresh once loaded
