@@ -87,3 +87,8 @@ GitHub allows developers to work together and contribute to a single repository 
 ### Hints
 
 Ask an instructor or TA if you get stuck or have any questions! Now that the repository is set up, check out what [Git workflow](https://guides.github.com/introduction/flow/) can work for your group. 
+
+
+## Accept as a collaborator
+Clone the project to new folder
+Create branch for all collaborators

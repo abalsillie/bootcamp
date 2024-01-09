@@ -4,18 +4,18 @@ var limitWarningEl = document.querySelector('#limit-warning');
 
 var getRepoName = function () {
   // Where is this value coming from?
-  // TODO: Write your answer here
+  // TODO: looking at webpage, location object which contains address of the webpage, search property is info after ?, query parametres
   var queryString = document.location.search;
-  var repoName = queryString.split('=')[1];
+  var repoName = queryString.split('=')[1]; // split on equals into array
 
   if (repoName) {
-    repoNameEl.textContent = repoName;
+    repoNameEl.textContent = repoName;// if repo name exists, set the text
 
     getRepoIssues(repoName);
   } else {
     // Under what condition will this run?
-    // TODO: Write your answer here
-    document.location.replace('./index.html');
+    // TODO: if repo doesn't exist
+    document.location.replace('./index.html'); // bump back to prior page
   }
 };
 
@@ -24,7 +24,7 @@ var getRepoIssues = function (repo) {
 
   fetch(apiUrl).then(function (response) {
     if (response.ok) {
-      response.json().then(function (data) {
+      response.json().then(function (data) { // if it is okay do response to json
         displayIssues(data);
 
         // What is this checking for? Under what condition will this be `true`?
@@ -41,7 +41,7 @@ var getRepoIssues = function (repo) {
 
 var displayIssues = function (issues) {
   // Is there a difference between this and `!issues.length`?
-  // TODO: Write your answer here
+  // TODO: same
   if (issues.length === 0) {
     issueContainerEl.textContent = 'This repo has no open issues!';
     return;
