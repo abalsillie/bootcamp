@@ -2,7 +2,6 @@ $(function () {
 
   // define elements
   var currentDayEl = $('#currentDay'); // current day display element
-  var scheduleDisplayEl = $('#container-lg'); // schedule display element
   var scheduleTextEl = $('.description'); // schedule text element
   var scheduleBlockEl = $('.time-block'); // time block element
   var saveBtn = $('.saveBtn'); // save button element
@@ -30,11 +29,10 @@ $(function () {
   };
 
   // listener for click events on the save button, save user input to local storage
-  function scheduleSave(event) {
-    event.preventDefault(); // prevents page refresh
-    saveBtn.on('submit', function() {
+  function scheduleSave() {
+    saveBtn.on('click', function() {
       var scheduleTime = $(this).parent().attr('id');
-      var scheduleText = $(this).siblings(scheduleTextEl).val().trim;
+      var scheduleText = $(this).siblings('.description').val();
       localStorage.setItem(scheduleTime, scheduleText);
     });
   };
@@ -43,11 +41,10 @@ $(function () {
   scheduleBlockEl.each(function() {
     var scheduleTime = $(this).attr('id');
     var scheduleText = localStorage.getItem(scheduleTime);
-    $(this).children(scheduleTextEl).val(scheduleText).trim;
+    $(this).children(scheduleTextEl).val(scheduleText);
   });
 
   displayDay(); // call display day function
   colourDisplay(); // call the colour display function
   scheduleSave(); // call the schedule save function
-  displaySchedule(); // call the display schedule function
 });
