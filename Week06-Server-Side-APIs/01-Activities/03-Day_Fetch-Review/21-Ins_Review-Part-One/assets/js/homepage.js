@@ -1,4 +1,4 @@
-var userFormEl = document.querySelector('#user-form');
+var userFormEl = document.querySelector('#user-form'); // not using jquery, just js, no dollar sign $
 var languageButtonsEl = document.querySelector('#language-buttons');
 var nameInputEl = document.querySelector('#username');
 var repoContainerEl = document.querySelector('#repos-container');
@@ -61,7 +61,7 @@ var getFeaturedRepos = function (language) {
   });
 };
 
-var displayRepos = function (repos, searchTerm) {
+var displayRepos = function (repos, searchTerm) { //  render repo to the page
   if (repos.length === 0) {
     repoContainerEl.textContent = 'No repositories found.';
     return;
@@ -78,7 +78,7 @@ var displayRepos = function (repos, searchTerm) {
     var titleEl = document.createElement('span');
     titleEl.textContent = repoName;
 
-    repoEl.appendChild(titleEl);
+    repoEl.appendChild(titleEl); // append span to repo element
 
     var statusEl = document.createElement('span');
     statusEl.classList = 'flex-row align-center';
@@ -96,5 +96,5 @@ var displayRepos = function (repos, searchTerm) {
   }
 };
 
-userFormEl.addEventListener('submit', formSubmitHandler);
-languageButtonsEl.addEventListener('click', buttonClickHandler);
+userFormEl.addEventListener('submit', formSubmitHandler); // attach even listener
+languageButtonsEl.addEventListener('click', buttonClickHandler); // attach even listener

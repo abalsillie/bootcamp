@@ -21,11 +21,11 @@ var formSubmitHandler = function (event) {
 
 var buttonClickHandler = function (event) {
   // What is `event.target` referencing?
-  // TODO: Write your answer here
+  // TODO: getting atttribute inside event target
   var language = event.target.getAttribute('data-language');
 
   // Why is this `if` block in place?
-  // TODO: Write your answer here
+  // TODO: if language exists, then run the function, then reset repo to empty
   if (language) {
     getFeaturedRepos(language);
 
@@ -45,10 +45,10 @@ var getUserRepos = function (user) {
           displayRepos(data, user);
         });
       } else {
-        alert('Error: ' + response.statusText);
+        alert('Error: ' + response.statusText); // otherwise do alert
       }
     })
-    .catch(function (error) {
+    .catch(function (error) { // catch error if it's inside if function and run alert function
       alert('Unable to connect to GitHub');
     });
 };
@@ -73,7 +73,7 @@ var displayRepos = function (repos, searchTerm) {
   if (repos.length === 0) {
     repoContainerEl.textContent = 'No repositories found.';
     // What would happen if there was no `return;` here?
-    // TODO: Write your answer here
+    // The search would keep running, continuing executing
     return;
   }
 
@@ -81,7 +81,7 @@ var displayRepos = function (repos, searchTerm) {
 
   for (var i = 0; i < repos.length; i++) {
     // What is the result of this string concatenation?
-    // TODO: Write your answer here
+    // TODO: Adding username and repo name i.e. abalsillie/bootcamprepo
     var repoName = repos[i].owner.login + '/' + repos[i].name;
 
     var repoEl = document.createElement('div');
@@ -102,11 +102,11 @@ var displayRepos = function (repos, searchTerm) {
       statusEl.innerHTML = "<i class='fas fa-check-square status-icon icon-success'></i>";
     }
 
-    repoEl.appendChild(statusEl);
+    repoEl.appendChild(statusEl); // append status to the repo
 
     repoContainerEl.appendChild(repoEl);
   }
 };
 
 userFormEl.addEventListener('submit', formSubmitHandler);
-languageButtonsEl.addEventListener('click', buttonClickHandler);
+languageButtonsEl.addEventListener('click', buttonClickHandler); // parse event listener click

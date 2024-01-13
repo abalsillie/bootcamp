@@ -1,12 +1,12 @@
 var searchFormEl = document.querySelector('#search-form');
 
-function handleSearchFormSubmit(event) {
-  event.preventDefault();
+function handleSearchFormSubmit(event) { // create event function for the listener
+  event.preventDefault(); // prevent refresh
 
-  var searchInputVal = document.querySelector('#search-input').value;
-  var formatInputVal = document.querySelector('#format-input').value;
+  var searchInputVal = document.querySelector('#search-input').value; // search-input element (first search box)
+  var formatInputVal = document.querySelector('#format-input').value; // format-input element (second box)
 
-  if (!searchInputVal) {
+  if (!searchInputVal) { // if value is empty, return an error
     console.error('You need a search input value!');
     return;
   }
@@ -16,4 +16,4 @@ function handleSearchFormSubmit(event) {
   location.assign(queryString);
 }
 
-searchFormEl.addEventListener('submit', handleSearchFormSubmit);
+searchFormEl.addEventListener('submit', handleSearchFormSubmit); // event listener for the submit button
