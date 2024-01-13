@@ -64,7 +64,7 @@ function searchApi(query, format) {
     locQueryUrl = 'https://www.loc.gov/' + format + '/?fo=json';
   }
 
-  locQueryUrl = locQueryUrl + '&q=' + query;
+  locQueryUrl = locQueryUrl + '&q=' + query; // and q equals the search input
 
   fetch(locQueryUrl)
     .then(function (response) {
@@ -72,7 +72,7 @@ function searchApi(query, format) {
         throw response.json();
       }
 
-      return response.json();
+      return response.json(); // because there is a throw, there needs to be an error
     })
     .then(function (locRes) {
       // write query to page so user knows what they are viewing
@@ -91,7 +91,7 @@ function searchApi(query, format) {
       }
     })
     .catch(function (error) {
-      console.error(error);
+      console.error(error); // only runs if the 'thens' fail
     });
 }
 

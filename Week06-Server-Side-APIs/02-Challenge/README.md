@@ -100,3 +100,15 @@ You are required to submit BOTH of the following for review:
 
 - - -
 © 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+
+Weather dashboard
+Previous searches show in boxes on left side ribbon
+Save previous searches to local storage to display
+Previous searches need to be clickable to search
+Brings up API info in the location you have searched
+Underneath, 4 day forecast
+Calling API for weather, cities
+API is linked in readme file
+Request API key from the website- view the blogs in the readme
+API key might take 1 - 2 hours to work after you’ve retrieved it
+Use free plan, only use one API key
