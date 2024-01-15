@@ -101,7 +101,6 @@ You are required to submit BOTH of the following for review:
 - - -
 © 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
 
-Weather dashboard
 Previous searches show in boxes on left side ribbon
 Save previous searches to local storage to display
 Previous searches need to be clickable to search
