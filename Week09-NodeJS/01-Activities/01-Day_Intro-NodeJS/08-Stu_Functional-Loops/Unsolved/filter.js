@@ -9,7 +9,9 @@ const evenNumbers = originalArray.filter(function(data) {
   }
 });
 
-console.log(evenNumbers);
+// trying to find even numbers
+
+console.log(evenNumbers); // filtering out even numbers
 console.log(originalArray);
 
 const isPrime = num => {
@@ -22,9 +24,12 @@ const isPrime = num => {
   return num !== 1;
 };
 
+// if number is prime, must be only divisible by itself
 
 // TODO: Describe how filter is working in this example. What will the value of primeArray be? 
 const primeArray = originalArray.filter(isPrime);
+// all elements from original array
+// can pass isPrime as a
 
 
 // TODO: Describe how filter is working in this example. What will the value of moreThan5Array be? 
