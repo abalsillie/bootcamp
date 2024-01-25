@@ -1,11 +1,19 @@
+// var is function scoped, var can be used throughout
+// let cannot be redeclared
+// let allows you to not forget redeclaring
+// let is BLOCK scoped
+
+
+
 // TODO: Fix the declarations so that the function works properly.
 const addGreetingMessage = (name) => {
-  var message = 'How are you?';
+  let message = 'How are you?';
+  // cannot redeclare as a variable if this is let
 
   if (name.length > 0) {
-    var message = 'Hello ' + name;
+    let message = 'Hello ' + name;
     console.log(message);
-  }
+  } // a block within a block
 
   console.log(message);
 };
@@ -14,13 +22,13 @@ addGreetingMessage('Tammy');
 
 // TODO: Fix the declarations so that the function works properly.
 const calloutCounter = () => {
-  const callout = 'Outside of the loop';
+  let callout = 'Outside of the loop'; // cannot change the const variable, cannot be redeclared as variable, change to let
   var counter = 5;
 
   while (counter > 0) {
-    var callout = 'Inside the loop';
+    let callout = 'Inside the loop';
     console.log(counter, callout);
-    counter--;
+    counter--; // a block inside a block
   }
 
   console.log(callout);

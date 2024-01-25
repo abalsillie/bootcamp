@@ -1,3 +1,6 @@
+//"this" refers to the object above, not inside the function
+
+
 // 1. funnyCase makes each letter in a string the opposite case as the one before
 var funnyCase = string => {
   var newString = "";
@@ -14,6 +17,7 @@ console.log(funnyCase("You can't just do whatever you want all the time!"));
 // --------------------------------------------------------------------------
 
 // 2. Map lets you loop over an array and modify the elements inside
+// arr and cb are variables
 var map = (arr, cb) => {
   var result = [];
   for (var index = 0; index < arr.length; index++) {
@@ -25,6 +29,8 @@ var map = (arr, cb) => {
 
 var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
+// another way to write this is...
+// var doubled = map(numbers, element => element*2)
 var doubled = map(numbers, element => {
   return element * 2
 });
@@ -35,7 +41,7 @@ console.log(doubled);
 // --------------------------------------------------------------------------
 
 // 3. filter lets you loop over an array and remove elements
-var filter = (arr, cb) => {
+var filter = (arr, cb) => { // parametres arr and cb
   var result = [];
   for (var index = 0; index < arr.length; index++) {
     var currentElement = arr[index];
@@ -62,18 +68,20 @@ var netflixQueue = {
     "The Matrix",
     "Eternal Sunshine of the Spotless Mind",
     "Fight Club"
-  ],
+  ], // key, array of values, object is being used
+  // these are all arrow function, this is the global object and will cause errors
+  // turn these back to
   watchMovie: () => {
-    this.queue.pop();
-  },
-  addMovie: (movie) => {
+    this.queue.pop(); // this is undefined, no context, need to use regular function
+  }, // pop gives last object of array
+  addMovie: (movie) => { // a function within a function, movie is the object
     this.queue.unshift(movie);
-  },
-  printQueue: () => {
+  }, // unshift = add to front of array
+  printQueue: () => { // for loop that prints all this out
     var list = "";
     for (var i = this.queue.length - 1; i >= 0; i--) {
       var currentMovie = this.queue[i];
-      list += (this.queue.length - i) + ". " + currentMovie + "\n";
+      list += (this.queue.length - i) + ". " + currentMovie + "\n"; // the this is not "queue" but the global object
     }
     console.log(list);
   }
@@ -89,3 +97,5 @@ console.log("\nAdding a movie!\n");
 netflixQueue.addMovie("Black Swan");
 console.log("Printing movie queue!\n");
 netflixQueue.printQueue();
+
+// to run the code, open terminal, input "node" inpu= index.js
