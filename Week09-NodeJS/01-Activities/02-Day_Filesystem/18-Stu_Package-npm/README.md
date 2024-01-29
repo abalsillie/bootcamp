@@ -1,3 +1,54 @@
+// logged from command line using npm init
+
+PS C:\Users\abals\Desktop\bootcamp\Week09-NodeJS\01-Activities\02-Day_Filesystem\18-Stu_Package-npm\Unsolved> npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See `npm help init` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install <pkg>` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+package name: (unsolved) my-project
+version: (1.0.0) 1.0.0                                                                                                                   
+description: this is my first project                                                                                                    
+entry point: (index.js) index.js                                                                                                         
+test command:                                                                                                                            
+git repository:                                                                                                                          
+keywords:                                                                                                                                
+author: Alex                                                                                                                             
+license: (ISC) ISC                                                                                                                       
+About to write to C:\Users\abals\Desktop\bootcamp\Week09-NodeJS\01-Activities\02-Day_Filesystem\18-Stu_Package-npm\Unsolved\package.json:
+
+{
+  "name": "my-project",
+  "version": "1.0.0",
+  "description": "this is my first project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alex",
+  "license": "ISC"
+}
+
+
+Is this OK? (yes) yes
+PS C:\Users\abals\Desktop\bootcamp\Week09-NodeJS\01-Activities\02-Day_Filesystem\18-Stu_Package-npm\Unsolved> npm i inquirer@8.2.4
+
+added 52 packages, and audited 53 packages in 6s
+
+16 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+PS C:\Users\abals\Desktop\bootcamp\Week09-NodeJS\01-Activities\02-Day_Filesystem\18-Stu_Package-npm\Unsolved> 
+
+
+
+
 # 📖 Initialize Projects using Node Package Manager (npm)
 
 Work with a partner to implement the following user story:
