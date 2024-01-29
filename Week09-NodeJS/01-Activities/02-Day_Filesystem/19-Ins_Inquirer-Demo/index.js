@@ -1,10 +1,10 @@
 const inquirer = require('inquirer');
 
-inquirer
-  .prompt([
+inquirer // takes in array of object to be asked of user
+  .prompt([ // prompt is a function of the library
     {
-      type: 'input',
-      message: 'What is your user name?',
+      type: 'input', // objects, documentation might expect a type, message and name properties
+      message: 'What is your user name?', // shown to user
       name: 'username',
     },
     {
@@ -18,8 +18,8 @@ inquirer
       name: 'confirm',
     },
   ])
-  .then((response) =>
+  .then((response) => // after above thing finished, this will run, arrow function
     response.confirm === response.password
-      ? console.log('Success!')
+      ? console.log('Success!') // response
       : console.log('You forgot your password already?!')
   );
