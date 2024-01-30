@@ -1,3 +1,13 @@
+Creating a read.me file
+node index.js will prompt certain qns
+github username, email, project name, project desc
+"Generating readme" will show
+Create readme even if spaces are empty
+No deployed library, run program in my computer and show us what user needs to input- take screen video, scroll down that generation is there
+Upload video in Google Drive and share the link in the submission
+Not pushing node modules folder into git hub- put in git ignore
+but do need to push package.json
+
 # 09 Node.js Challenge: Professional README Generator
 
 ## Your Task

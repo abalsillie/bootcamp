@@ -1,7 +1,14 @@
-const inquirer = require('inquirer');
-const fs = require('fs');
+// npmjs.com/package/inquirer documentation
 
-const generateHTML = ({ name, location, github, linkedin }) =>
+const inquirer = require('inquirer'); // require inquirer
+const fs = require('fs'); // require fs
+
+// referring to documentation there are mandatory properties, e.g. list (type, name, message are mandatory)
+
+const generateHTML = ({ name, location, github, linkedin }) => // properties collected from prompts below
+// passes objects as parametres, instead of individual values
+// generateHTML is a function AFTER we get the input
+// will actually generate the HTML file
   `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,8 +32,9 @@ const generateHTML = ({ name, location, github, linkedin }) =>
 </body>
 </html>`;
 
+// copy from documentation npmjs.com/package/inquirer and then begin to edit
 inquirer
-  .prompt([
+  .prompt([ // input = text field
     {
       type: 'input',
       name: 'name',
@@ -58,10 +66,12 @@ inquirer
       message: 'Enter your LinkedIn URL.',
     },
   ])
+  // store answers in the .then, automatic flow via inquirer, doesn't have to be called answers, could be anything
   .then((answers) => {
-    const htmlPageContent = generateHTML(answers);
-
+    const htmlPageContent = generateHTML(answers); // storing answers in a variable, passing in answers
+  // generates HTML code and puts answers in file
+  // fs writeFile is writing the file, adding page content from answer input, and adding an error
     fs.writeFile('index.html', htmlPageContent, (err) =>
-      err ? console.log(err) : console.log('Successfully created index.html!')
+      err ? console.log(err) : console.log('Successfully created index.html!') // message will log in the terminal
     );
   });
