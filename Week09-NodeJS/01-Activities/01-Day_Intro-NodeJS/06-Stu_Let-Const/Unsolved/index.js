@@ -3,8 +3,6 @@
 // let allows you to not forget redeclaring
 // let is BLOCK scoped
 
-
-
 // TODO: Fix the declarations so that the function works properly.
 const addGreetingMessage = (name) => {
   let message = 'How are you?';

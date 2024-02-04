@@ -19,8 +19,8 @@ console.log(addition(1, 2, 3));
 // sum is 6
 
 // TODO: What is this syntax that is being used as the parameter?
-const additionSpread = (...array) => {
-  return array.reduce((a, b) => a + b, 0); // infinite parametres, 0 is initial value
+const additionSpread = (...array) => { // infinite parametres, not just x, y, z now
+  return array.reduce((a, b) => a + b, 0); // 0 is initial value
 };
 
 // TODO: What do you expect to be logged in the console?

@@ -2,8 +2,8 @@
 var dog = {
   name: "Lassie",
   sound: "Woof!",
-  makeSound: () => console.log(this.sound),
-  readTag: () => console.log("The dog's tag reads: " + this.name + ".")
+  makeSound: () => console.log(this.sound), // `this` doesn't refer to `dog`
+  readTag: () => console.log("The dog's tag reads: " + this.name + ".") // `this` doesn't refer to `dog`
 };
 
 // Prints `undefined`
