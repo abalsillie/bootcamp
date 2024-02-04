@@ -2,14 +2,15 @@
 var createGreeting = function(message, name) {
   return message + ", " + name + "!";
 };
+// a variable that returns a message, name!
 
 // We can safely swap out function expressions with arrow functions most of the time
-var createGreeting = (message, name) => {
+var createGreeting = (message, name) => { // arrow function syntax
   return message + ", " + name + "!";
 };
 
 // If the arrow function body contains only one expression, we can omit the curly braces and auto return it
-var createGreeting = (message, name) => message + ", " + name + "!";
+var createGreeting = (message, name) => message + ", " + name + "!"; // only if returns 1 expression
 
 // If an arrow function only has one parameter, we can omit the parens () around the single parameter
 var greet = greeting => console.log(greeting);

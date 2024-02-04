@@ -2,13 +2,13 @@
 // In the browser, `setTimeout` is a property of the `window` object
 // In node, it belongs to a special "Timeout" object
 
-var person = {
+var person = { // object person
   name: "Hodor",
   saySomething: function() {
-    console.log(this.name + " is thinking...");
+    console.log(this.name + " is thinking..."); // person.name (Hodor) is thinking
     setTimeout(function() {
-      console.log(this.name + "!");
-    }, 100);
+      console.log(this.name + "!"); // 'this' is undefined, as function inside a function, use arrow function instead
+    }, 100); // 100 miliseconds after
   }
 };
 
@@ -21,7 +21,7 @@ var person = {
   name: "Hodor",
   saySomething: function() {
     console.log(this.name + " is thinking...");
-    setTimeout(() => console.log(this.name + "!"), 100);
+    setTimeout(() => console.log(this.name + "!"), 100); // arrow function syntax recognises 'this' as person in this second function
   }
 };
 
