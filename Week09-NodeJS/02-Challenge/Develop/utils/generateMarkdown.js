@@ -18,6 +18,6 @@ function generateMarkdown(data) {
   ## Questions
   For questions, please contact: ${data.email}
   Review full github repo here: ${data.username};
-};
+`};
 
 module.exports = generateMarkdown;
