@@ -6,7 +6,7 @@ describe('ForumItem', () => {
     it('should be an instance of ForumItem class', () => {
       const forumitem = new ForumItem();
 
-      expect(forumitem).toBeInstanceOf(ForumItem);
+      expect(forumitem).toBeInstanceOf(ForumItem); 
     });
   });
 
@@ -14,7 +14,7 @@ describe('ForumItem', () => {
   describe('Initialize authorName', () => {
     it('should set authorName properly', () => {
       const authorName = 'Jack Doe';
-      const forumitem = new ForumItem(authorName);
+      const forumitem = new ForumItem(authorName);  // checking whether name is the same that what we have passed has been initialised
 
       expect(forumitem.authorName).toBe(authorName);
     });
@@ -47,7 +47,7 @@ describe('ForumItem', () => {
   // Add a comment describing this test.
   describe('printMetaData() method', () => {
     it('should print message with data', () => {
-      const forumitem = new ForumItem(
+      const forumitem = new ForumItem( // pass complete object
         'Jack Doe',
         'This is some random text',
         '12/15/2021'

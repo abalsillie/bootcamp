@@ -1,3 +1,8 @@
+// unit testing- single
+// arithmetic testing- multiple units/ modules
+// end to end functioning
+// create test folder for test files
+
 // Constructor Arithmetic is imported.
 const Arithmetic = require('../arithmetic.js');
 

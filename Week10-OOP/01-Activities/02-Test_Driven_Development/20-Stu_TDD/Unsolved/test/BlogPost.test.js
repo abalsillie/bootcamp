@@ -3,21 +3,21 @@ const Comment = require('../lib/Comment.js');
 
 describe('BlogPost', () => {
   // TODO: Add a comment describing this test.
-  describe('Instantiate', () => {
+  describe('Instantiate', () => { // creating an instance of the BlogPost class
     it('should be an instance of BlogPost class', () => {
       const blogpost = new BlogPost();
 
-      expect(blogpost).toBeInstanceOf(BlogPost);
+      expect(blogpost).toBeInstanceOf(BlogPost); // to be instance of a class
     });
   });
 
   // TODO: Add a comment describing this test.
   describe('Initialize authorName', () => {
     it('should set authorName properly', () => {
-      const authorName = 'John Doe';
+      const authorName = 'John Doe'; // author name should be properly set
       const blogpost = new BlogPost(authorName);
 
-      expect(blogpost.authorName).toBe(authorName);
+      expect(blogpost.authorName).toBe(authorName); // author name is equal to what we passed
     });
   });
 
@@ -69,10 +69,10 @@ describe('BlogPost', () => {
   describe('addComment() method', () => {
     it('should add comment to comments array', () => {
       const blogpost = new BlogPost();
-      const comment = new Comment();
-      blogpost.addComment(comment);
+      const comment = new Comment(); // create new comment
+      blogpost.addComment(comment); // pass comment to function
 
-      expect(blogpost.comments[0]).toBeInstanceOf(Comment);
+      expect(blogpost.comments[0]).toBeInstanceOf(Comment); // check whether first comment appear
     });
   });
 
@@ -87,7 +87,7 @@ describe('BlogPost', () => {
       );
 
       expect(blogpost.printMetaData()).toBe(
-        `Created by John Doe on 12/15/2021`
+        `Created by John Doe on 12/15/2021` // data should print as
       );
     });
   });

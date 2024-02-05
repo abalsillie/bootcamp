@@ -1,6 +1,6 @@
 // Create a new Arithmetic class that behaves much like the previous demonstration.
 class Arithmetic {
-  constructor(num1, num2, operator) {
+  constructor(num1, num2, operator) { // operator has to be a string, num1 and 2 are numbers
     
     // Checks to see that both numbers being passed in are of type number. If not, throw an error.
     if (typeof num1 !== "number" || typeof num2 !== "number") {
