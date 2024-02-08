@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
 });
 
 // This method sends a JSON response with the correct content type.
-app.get('/api', (req, res) => {
+app.get('/api', (req, res) => { // send data in json
   res.json({
     term: 'api',
     description:
