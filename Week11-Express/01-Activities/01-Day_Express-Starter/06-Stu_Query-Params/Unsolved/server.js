@@ -1,17 +1,20 @@
+// ensure correct file name in package.json
+
 const express = require('express');
 // Helper function to sort our data in ascending and descending order
-const { sortData } = require('./sortData');
-const termData = require('./terms.json');
+const { sortData } = require('./sortData'); // sortdata coming from file called sortData, helper function is in sortData file
+const termData = require('./terms.json'); // terms.json defines json values, storing in termData variable
 
 const PORT = 3001;
 
-const app = express();
+const app = express(); // express
 
 const sortHelper = (type) =>
-  termData.sort(sortData('term', 'relevance', `${type}`));
+  termData.sort(sortData('term', 'relevance', `${type}`)); // sort is a method, calling for json file helper function
 
 // TODO: Add a comment describing the functionality of this route
-
+// root hasn't been mentioned
+// getting all of sorted terms, nothing defined
 app.get('/api/terms/', (req, res) => {
   // TODO: Add a comment describing the req.query object
 
