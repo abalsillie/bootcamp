@@ -1,4 +1,6 @@
-const uuid = require('../helpers/uuid');
+// database function
+
+const uuid = require('../helpers/uuid'); // calling uuid function
 
 const reviews = [
   {
@@ -10,7 +12,7 @@ const reviews = [
       'Love it! They typing feel is amazing but it lacks dedicated arrow keys',
     rating: 8,
     upvotes: 20,
-    review_id: uuid(),
+    review_id: uuid(), // combined fetch and root together
   },
   {
     product: 'Apple Wireless Keyboard',

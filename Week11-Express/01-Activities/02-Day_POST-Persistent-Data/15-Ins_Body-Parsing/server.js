@@ -36,6 +36,8 @@ app.post('/api/reviews', (req, res) => {
   } else {
     res.json('Request body must at least contain a product name');
   }
+  // if condition checks if the body exists, validating that object has been sent over
+  // exists for Middleware express.json
 
   // Log the response body to the console
   console.log(req.body);

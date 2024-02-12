@@ -5,7 +5,7 @@ const PORT = 3001;
 const app = express();
 
 // GET request
-app.get('/api/reviews', (req, res) => {
+app.get('/api/reviews', (req, res) => { // do get request, input this to Insomnia
   // Let the client know that their request was received
   res.json(`${req.method} request received`);
 
@@ -17,7 +17,7 @@ app.get('/api/reviews', (req, res) => {
 });
 
 // POST request
-app.post('/api/reviews', (req, res) => {
+app.post('/api/reviews', (req, res) => { // post request, syntax similar
   // Let the client know that their POST request was received
   res.json(`${req.method} request received`);
 
@@ -31,3 +31,5 @@ app.post('/api/reviews', (req, res) => {
 app.listen(PORT, () =>
   console.log(`Express server listening on port ${PORT}!`)
 );
+
+// change to POST request in Insomnia

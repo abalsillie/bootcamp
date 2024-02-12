@@ -1,3 +1,5 @@
+// server side code
+
 const express = require('express');
 const path = require('path');
 // Helper method for generating unique ids
@@ -20,7 +22,7 @@ app.get('/', (req, res) =>
 // GET request for reviews
 app.get('/api/reviews', (req, res) => {
   console.info(`GET /api/reviews`);
-  res.status(200).json(reviews);
+  res.status(200).json(reviews); // line 71
 });
 
 // GET request for a single review
@@ -57,18 +59,18 @@ app.post('/api/reviews', (req, res) => {
       review,
       username,
       upvotes: Math.floor(Math.random() * 100),
-      review_id: uuid(),
+      review_id: uuid(), // this code is running, creating all these values, not being stored
     };
 
     const response = {
       status: 'success',
-      body: newReview,
+      body: newReview, // creates a response, success, goes to client side index.js
     };
 
     console.log(response);
 
     // TODO: Add a comment explaining the functionality of res.json()
-    res.status(201).json(response);
+    res.status(201).json(response); // send json response 201
   } else {
     // TODO: Add a comment describing the purpose of the else statement in this POST request.
     res.status(500).json('Error in posting review');
