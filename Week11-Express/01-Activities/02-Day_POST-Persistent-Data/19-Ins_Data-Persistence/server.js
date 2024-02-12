@@ -1,3 +1,6 @@
+// data persistence, running at local host when run node server.js
+// make submission in html link http://localhost:3001/ and file will show in db
+
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
@@ -49,11 +52,11 @@ app.post('/api/reviews', (req, res) => {
     const reviewString = JSON.stringify(newReview);
 
     // Write the string to a file
-    fs.writeFile(`./db/${newReview.product}.json`, reviewString, (err) =>
+    fs.writeFile(`./db/${newReview.product}.json`, reviewString, (err) => // write to file system in database
       err
         ? console.error(err)
-        : console.log(
-            `Review for ${newReview.product} has been written to JSON file`
+        : console.log( 
+            `Review for ${newReview.product} has been written to JSON file` // if successful run this message
           )
     );
 
@@ -63,7 +66,7 @@ app.post('/api/reviews', (req, res) => {
     };
 
     console.log(response);
-    res.status(201).json(response);
+    res.status(201).json(response); // response from above
   } else {
     res.status(500).json('Error in posting review');
   }

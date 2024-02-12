@@ -6,8 +6,9 @@ const reviews = require('./db/reviews');
 const app = express();
 
 // TODO: Implement middleware for the parsing of JSON data
-
+app.use(express.json());
 // TODO: Implement middleware for parsing of URL encoded data
+app.use(express.urlencoded({ extended: true }));
 
 // GET request for ALL reviews
 app.get('/api/reviews', (req, res) => {
@@ -19,7 +20,7 @@ app.get('/api/reviews', (req, res) => {
 });
 
 // GET request for a single review
-app.get('/api/reviews/:review_id', (req, res) => {
+app.get('/api/reviews/:review_id', (req, res) => { // path parametre used a colon
   if (req.params.review_id) {
     console.info(`${req.method} request received to get a single a review`);
     const reviewId = req.params.review_id;
@@ -45,7 +46,7 @@ app.post('/api/reviews', (req, res) => {
   let response;
 
   // Check if there is anything in the response body
-  if (req.body && req.body.product) {
+  if (req.body && req.body.product) { // parametre name is product, pass in to Insomnia
     response = {
       status: 'success',
       data: req.body,
@@ -61,20 +62,20 @@ app.post('/api/reviews', (req, res) => {
 
 // POST request to upvote a review
 app.post('/api/upvotes/:review_id', (req, res) => {
-  if (req.body && req.body.upvote && req.params.review_id) {
+  if (req.body && req.body.upvote && req.params.review_id) { // if there is a body, taken care of by middleware, and body has upvote property and parametre review id, then run code
     console.info(`${req.method} request received to upvote a review`);
     const reviewId = req.params.review_id;
     for (let i = 0; i < reviews.length; i++) {
-      const currentReview = reviews[i];
+      const currentReview = reviews[i]; // loop through reviews array, does the array = array passed through
       if (currentReview.review_id === reviewId) {
-        currentReview.upvotes += 1;
-        res.status(200).json(`New upvote count is: ${currentReview.upvotes}!`);
+        currentReview.upvotes += 1; // if yes, increment upvotes
+        res.status(200).json(`New upvote count is: ${currentReview.upvotes}!`); // respond with 'new upvote count is...'
         return;
       }
     }
     res.status(404).json('Review ID not found');
   } else {
-    res.status(500).json("Provide a req.body or review ID");
+    res.status(500).json("Provide a req.body or review ID"); // otherwise, need to give body or review ID
   }
 });
 

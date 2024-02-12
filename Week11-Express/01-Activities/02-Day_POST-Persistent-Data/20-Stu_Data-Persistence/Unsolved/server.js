@@ -42,30 +42,42 @@ app.post('/api/reviews', (req, res) => {
       review,
       username,
       review_id: uuid(),
-    };
+    }; // create into a string
 
     // Convert the data to a string so we can save it
-    const reviewString = JSON.stringify(newReview);
+    const reviewString = JSON.stringify(newReview); // stringify
+
+    // obtain existing reviews
+    fs.readFile('./db/reviews.json', 'utf8', (err, data) => {
+      if (err) {
+        console.error(err);
+      } else {
+        // convert sting to JSON parse
+        const parsedReviews = JSON.parse(data);
+        // add a new review
+        parsedReviews.push(newReview);
 
     // Write the string to a file
     fs.writeFile(`./db/reviews.json`, reviewString, (err) =>
       err
         ? console.error(err)
         : console.log(
-            `Review for ${newReview.product} has been written to JSON file`
-          )
+          `Review for ${newReview.product} has been written to JSON file` // write the json file, success message
+        ) // push new review to existing
     );
-
-    const response = {
-      status: 'success',
-      body: newReview,
-    };
-
-    console.log(response);
-    res.status(201).json(response);
-  } else {
-    res.status(500).json('Error in posting review');
   }
+});
+
+const response = {
+  status: 'success',
+  body: newReview,
+};
+
+console.log(response);
+res.status(201).json(response);
+  } else {
+  res.status(500).json('Error in posting review');
+}
 });
 
 app.listen(PORT, () =>
