@@ -1,13 +1,35 @@
-// jest shape tests
+// jest shape test
+// run 'npm test' in the terminal to ensure objects rendered match what is defined in shapes.js
 
-// Each shape class should be tested for a `render()` method that returns a string
-// for the corresponding SVG file with the given shape color
+const { Triangle, Circle, Square } = require("./shapes.js") // import classes from shapes.js
 
-// The following example test should pass:
+// refer to code given in README to test
+// triangle
+describe('triangle', () => {
+  test('correct', () => {
+    const shape = new Triangle();
+    var color = ('blue')
+    shape.setColor(color);
+    expect(shape.render()).toEqual(`<polygon height="200" width="300" points="150, 18 244, 182 56, 182" fill="${color}"/>`);
+  });
+});
 
-```js
-const shape = new Triangle();
-shape.setColor("blue");
-expect(shape.render()).toEqual('<polygon points="150, 18 244, 182 56, 182" fill="blue" />');
-```
+// circle
+describe('circle', () => {
+  test('correct', () => {
+    const shape = new Circle();
+    var color = ('blue');
+    shape.setColor(color);
+    expect(shape.render()).toEqual(`<circle height="200" width="300" cx="150" cy="100" r="80" fill="${color}"/>`);
+  });
+});
 
+// square
+describe('square', () => {
+  test('correct', () => {
+    const shape = new Square();
+    var color = ('blue')
+    shape.setColor(color);
+    expect(shape.render()).toEqual(`<rect height="200" width="200" x="50" fill="${color}"/>`);
+  });
+});
