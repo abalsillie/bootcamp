@@ -1,3 +1,12 @@
+- clone repo
+- git status to ensure up to date
+GIT LOG
+- git log: gives log of all commits made to repo in reverse order, gives author name
+- git log packages: commits specific to 'packages' directory
+- can check for commits from a specific branch
+GIT BLAME
+- git checkout (commit #) to revert back to old version
+
 # Git History 📜
 
 Git is a powerful tool with tons of features that can handle projects spanning weeks, months, and even years. Today we will explore a collection of lesser-known commands that help us navigate, rewrite, reference, and clean up the history of a Git repository.
