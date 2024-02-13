@@ -1,3 +1,12 @@
+- note taking application
+- take note, save and retrieve
+- local host route
+- set index.html
+- notes append to file in db
+- deply application to heroku
+- starter code, entire content, focus is on backend- finish extra routes- get round and post route for notes and delete routes
+- api routes
+
 # 11 Express.js: Note Taker
 
 ## Your Task
