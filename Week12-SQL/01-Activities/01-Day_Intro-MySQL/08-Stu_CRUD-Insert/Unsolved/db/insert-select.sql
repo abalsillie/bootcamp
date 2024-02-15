@@ -5,3 +5,7 @@ VALUES
     ( 003, "Long Walk to Freedom");
 
 SELECT * FROM biographies;
+
+-- must navigate to correct folder outside of mysql, then enter mysql
+mysql -u root -produce
+SOURCE db/insert-select.sql; -- to run return
