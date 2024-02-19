@@ -10,3 +10,10 @@ CREATE TABLE courses (
   active BOOLEAN NOT NULL,
   date_updated DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL
 );
+
+-- input into terminal...
+-- navigate to file path
+-- enter mysql -u root -p
+-- SOURCE db/schema.sql; -- defines the database, enter this one first
+-- SOURCE db/seeds.sql; -- populates the db defined in schema with data
+-- SELECT * FROM courses; -- will show courses table with these columns as per above
