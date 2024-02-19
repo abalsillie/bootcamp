@@ -1,3 +1,15 @@
+open terminal
+to activate mysql -u root -p
+enter password
+
+DROP DATABASE IF EXISTS demo_db; // delete it if it exists
+
+CREATE DATABASE demo_db; // create it
+
+USE demo_db;
+
+SELECT DATABASE();
+
 # 📖 Use MySQL Statements to Delete, Create, and Select a Database
 
 Work with a partner to implement the following user story:

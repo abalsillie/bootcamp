@@ -1,9 +1,9 @@
 DROP DATABASE IF EXISTS registrar_db;
-CREATE DATABASE registrar_db;
+CREATE DATABASE registrar_db; -- database name
 
 USE registrar_db;
 
-CREATE TABLE courses (
+CREATE TABLE courses ( -- tables names
   id INT NOT NULL,
   course_title VARCHAR(30) NOT NULL,
   course_description TEXT NOT NULL,
