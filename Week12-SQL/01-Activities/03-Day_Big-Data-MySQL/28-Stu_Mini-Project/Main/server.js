@@ -46,7 +46,7 @@ app.get('/api/movies', (req, res) => {
   
   db.query(sql, (err, rows) => {
     if (err) {
-      res.status(500).json({ error: err.message });
+      res.status(500).json({ error: err.message }); // 500 is internal server error
        return;
     }
     res.json({

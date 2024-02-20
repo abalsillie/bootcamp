@@ -13,3 +13,4 @@ VALUES ("Intro to JavaScript", 1),
        ("Game Design", 1 ),
        ("Cloud Development", 1);
        
+-- SELECT * FROM course_names JOIN department ON department = id
