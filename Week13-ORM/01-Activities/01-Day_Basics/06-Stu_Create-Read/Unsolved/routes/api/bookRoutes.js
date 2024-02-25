@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const Book = require('../../models/Book');
+const Book = require('../../models/Book'); // go into model's folder, book
 
 // TODO: Add a comment describing the purpose of this route
 router.get('/', (req, res) => {
@@ -47,6 +47,7 @@ router.post('/', (req, res) => {
 });
 
 // CREATE multiple books
+// bulk create/ insertion, calling end point seed
 router.post('/seed', (req, res) => {
   Book.bulkCreate([
     {

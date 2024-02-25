@@ -1,4 +1,4 @@
-const Sequelize = require('sequelize');
+const Sequelize = require('sequelize'); // require from sequelize
 
 // Create a connection object
 const sequelize = new Sequelize(
@@ -9,7 +9,7 @@ const sequelize = new Sequelize(
   // Password
   'myPassword',
   {
-    // Database location
+    // Object with information about the database
     host: 'localhost',
     dialect: 'mysql',
     port: 3306

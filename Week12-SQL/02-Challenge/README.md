@@ -1,9 +1,3 @@
-- inquirer npm
-- video screen
-- creating a table of inputs, asking questions
-- msql server, role table
-- follow foreign keys and primary keys shown in image
-
 # 12 SQL: Employee Tracker
 
 ## Your Task
