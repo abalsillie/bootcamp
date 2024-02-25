@@ -7,7 +7,7 @@ const Book = require('../../models/Book');
 router.post('/', (req, res) => {
   // Use Sequelize's `create()` method to add a row to the table
   // Similar to `INSERT INTO` in plain SQL
-  Book.create({
+  Book.create({ // takes in object with values for record
     title: req.body.title,
     author: req.body.author,
     is_paperback: true
@@ -25,7 +25,7 @@ router.post('/', (req, res) => {
 router.post('/seed', (req, res) => {
   // Multiple rows can be created with `bulkCreate()` and an array
   // This could also be moved to a separate Node.js script to ensure it only happens once
-  Book.bulkCreate([
+  Book.bulkCreate([ // bulk create functionality on the book object
     {
       title: 'Make It Stick: The Science of Successful Learning',
       author: 'Peter Brown',
