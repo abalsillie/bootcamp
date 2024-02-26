@@ -2,11 +2,12 @@ const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
+// use instance method to compare the user's input with the user's hashed password
 class User extends Model {
-  checkPassword(userPassword) {
-    // TODO: Complete the instance method
+  checkPassword(userPassword) { // line 39 in userRoutes.js
+    bcrypt.compareSync(userPassword, this.password); // we are comparing in sync, we have direct access to the password because the parametres are defined below
   }
-}
+} // this refers to whatever instance
 
 User.init(
   {

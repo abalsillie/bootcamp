@@ -4,14 +4,14 @@ const sequelize = require('../config/connection');
 
 class User extends Model {
   // This instance method uses a conditional statement to check if a user has pets
-  hasPets() {
+  hasPets() { // using this model function inside userRoutes.js file, defined here, can be used more than once
     if (this.numberOfPets > 0) {
       return true;
     } else {
       return false;
     }
   }
-}
+} // can create functions on classes to make things easier
 
 User.init(
   {

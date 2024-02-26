@@ -42,7 +42,7 @@ router.get('/:id/hasPets', async (req, res) => {
       return;
     }
     // If a user does exist at the primary key, we get to use the instance method that we wrote in User.js to see if the user has pets
-    const petData = userData.hasPets();
+    const petData = userData.hasPets(); // instance method 'has pets', don't have to use if statement, populating from models/user.js
     // If petData evaluates as false (user has 0 pets), then the user will receive the message below
     if (!petData) {
       res.status(400).json({ message: 'This person has no pets.' });
