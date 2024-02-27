@@ -1,1 +1,0 @@
-using Node.js, Inquirer, and MySQL2
