@@ -1,3 +1,5 @@
+<!-- this html opens single instance of page -->
+
 <div class="dish-card">
   <div class="dish-card-header">
     {{dish_name}}
@@ -7,6 +9,11 @@
       Description:
       {{description}}
     </p>
-<!-- TODO: Use a built-in helper to display "Contains Nuts" if a food item contains nuts.-->
+    <!-- TODO: Use a built-in helper to display "Contains Nuts" if a food item contains nuts.-->
+    {{#if has_nuts}}
+    <p class="has-nuts">
+      contains nuts
+    </p>
+    {{/if}}
   </div>
 </div>

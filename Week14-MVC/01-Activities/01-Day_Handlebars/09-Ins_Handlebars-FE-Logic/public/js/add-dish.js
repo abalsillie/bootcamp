@@ -6,7 +6,7 @@ async function newFormHandler(event) {
   // The following is a ternary operator. It checks to see if has_nuts is checked. If it is, it will return true, otherwise, it will return false.
   const has_nuts = document.querySelector('#has_nuts:checked') ? true : false;
   // Send fetch request to add a new dish
-  const response = await fetch(`/api/dish`, {
+  const response = await fetch(`/api/dish`, { // api call to own server, refers to dish-routes
     method: 'POST',
     body: JSON.stringify({
       dish_name,

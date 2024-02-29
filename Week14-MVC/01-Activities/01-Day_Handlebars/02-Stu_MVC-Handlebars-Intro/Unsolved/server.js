@@ -1,6 +1,6 @@
 // Dependencies
 const express = require('express');
-const exphbs = require('express-handlebars');
+const exphbs = require('express-handlebars'); // shown in package.json
 const path = require('path');
 const hbs = exphbs.create({});
 
@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 3001;
 
 // TODO: Describe what the following two lines of code are doing.
 app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
+app.set('view engine', 'handlebars'); // set express that view engine is handlebars
 
 
 app.use(express.static(path.join(__dirname, 'public')));
