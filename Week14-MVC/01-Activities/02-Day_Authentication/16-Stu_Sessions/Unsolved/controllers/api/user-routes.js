@@ -11,9 +11,9 @@ router.post('/', async (req, res) => {
     });
 
     // TODO: Set up sessions with the 'loggedIn' variable
-    req.session.save(() => {
+    req.session.save(() => { // method to login
       // TODO: Set the 'loggedIn' session variable to 'true'
-
+      req.session.loggedIn = true; // request session method to save as particular session, when logged in, save session
       res.status(200).json(dbUserData);
     });
   } catch (err) {
@@ -40,16 +40,16 @@ router.post('/login', async (req, res) => {
 
     const validPassword = await dbUserData.checkPassword(req.body.password);
 
-    if (!validPassword) {
+    if (!validPassword) { // if password is correct
       res
         .status(400)
         .json({ message: 'Incorrect email or password. Please try again!' });
       return;
     }
 
-    req.session.save(() => {
+    req.session.save(() => { // create a session
       // TODO: Once the user successfully logs in, set up sessions with the 'loggedIn' variable
-
+      req.session.loggedIn = true;
       res
         .status(200)
         .json({ user: dbUserData, message: 'You are now logged in!' });

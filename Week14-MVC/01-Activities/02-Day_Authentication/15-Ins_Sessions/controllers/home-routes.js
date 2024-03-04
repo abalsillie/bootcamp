@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
       gallery.get({ plain: true })
     );
 
-    req.session.save(() => {
+    req.session.save(() => { // function used explicitly to save session
       // We set up a session variable to count the number of times we visit the homepage
       if (req.session.countVisit) {
         // If the 'countVisit' session variable already exists, increment it by 1
@@ -30,7 +30,7 @@ router.get('/', async (req, res) => {
       res.render('homepage', {
         galleries,
         // We send over the current 'countVisit' session variable to be rendered
-        countVisit: req.session.countVisit,
+        countVisit: req.session.countVisit, // counting visits
       });
     });
   } catch (err) {

@@ -14,11 +14,11 @@ const PORT = process.env.PORT || 3001;
 // Set up sessions
 const sess = {
   secret: 'Super secret secret',
-  resave: false,
-  saveUninitialized: false,
+  resave: false, 
+  saveUninitialized: false, // save a session even only when saved, not when 'comes to website' for example
 };
 
-app.use(session(sess));
+app.use(session(sess)); // pass in session object, mounting the middleware, now accessible across entire application
 
 const hbs = exphbs.create({ helpers });
 
