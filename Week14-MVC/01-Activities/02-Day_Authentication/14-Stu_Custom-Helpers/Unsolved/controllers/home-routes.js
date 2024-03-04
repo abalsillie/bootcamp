@@ -38,7 +38,7 @@ router.get('/gallery/:id', async (req, res) => {
             'id',
             'title',
             'artist',
-            'exhibition_date',
+            'exhibition_date', // need to calculate end date, need to create helper function
             'filename',
             'description',
           ],

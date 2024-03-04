@@ -1,3 +1,7 @@
+// tracking with cookies
+// history saved
+// partials are mini templates, pass in
+
 const path = require('path');
 const express = require('express');
 const exphbs = require('express-handlebars');

@@ -2,8 +2,12 @@
   <!-- TODO: Link the contents of the card to the painting page using the painting ID -->
 
   <!-- TODO: Create the card header with the painting's title -->
-
+  <header>{{title}}</header> <!-- this title is being looped -->
   <div class="card-body">
     <!-- TODO: Create the card body with the image of the painting and the name of the artist -->
+    <img src="/images/{{filename}}" alt = "{{description}}">
+    <p>By: {{artist}}</p>
   </div>
 </section>
+
+<!-- put everything that you want looped in a partial -->

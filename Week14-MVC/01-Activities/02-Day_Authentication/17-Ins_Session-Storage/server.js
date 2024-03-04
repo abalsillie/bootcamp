@@ -1,8 +1,10 @@
+// saving in sequelize db
+
 const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const SequelizeStore = require('connect-session-sequelize')(session.Store); // saving sequelize store constant
 
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
@@ -12,7 +14,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Set up sessions with cookies
-const sess = {
+const sess = { // pass in store property
   secret: 'Super secret secret',
   cookie: {
     // Stored in milliseconds
@@ -20,7 +22,7 @@ const sess = {
   },
   resave: false,
   saveUninitialized: true,
-  store: new SequelizeStore({
+  store: new SequelizeStore({ // specific instance of our store and connect to sequelize sequence
     db: sequelize,
   }),
 };
