@@ -1,6 +1,6 @@
 const { Product } = require('../models');
 
-const productData = [
+const productData = [ // array of product data consisting of product variables and values
   {
     product_name: 'Plain T-Shirt',
     price: 14.99,

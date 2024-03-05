@@ -1,6 +1,6 @@
 const { Tag } = require('../models');
 
-const tagData = [
+const tagData = [ // create the array
   {
     tag_name: 'rock music',
   },
@@ -27,6 +27,6 @@ const tagData = [
   },
 ];
 
-const seedTags = () => Tag.bulkCreate(tagData);
+const seedTags = () => Tag.bulkCreate(tagData); // function that takes model and tells sequelize to bulk create the array
 
-module.exports = seedTags;
+module.exports = seedTags; // export function to index.js
