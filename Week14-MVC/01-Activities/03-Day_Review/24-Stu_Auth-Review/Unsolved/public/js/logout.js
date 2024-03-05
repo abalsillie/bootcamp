@@ -7,6 +7,7 @@ const logout = async () => {
 
   if (response.ok) {
     // TODO: Add a comment describing the functionality of this statement
+    // make post request to logout, redirect to login page
     document.location.replace('/login');
   } else {
     alert('Failed to log out');

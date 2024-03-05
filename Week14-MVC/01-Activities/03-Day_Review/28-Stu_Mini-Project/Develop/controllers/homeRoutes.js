@@ -1,7 +1,7 @@
 // homeRoutes file sits outside api folder
 const router = require('express').Router(); // bring router in
 const { Project, User } = require('../models');
-const withAuth = require('../utils/auth');
+
 
 router.get('/', async (req, res) => {
   try {
