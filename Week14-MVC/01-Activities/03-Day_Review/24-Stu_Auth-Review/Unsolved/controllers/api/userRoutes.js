@@ -4,6 +4,7 @@ const { User } = require('../../models');
 router.post('/login', async (req, res) => {
   try {
     // TODO: Add a comment describing the functionality of this expression
+    // making use of the model, finding user in the database by using their email
     const userData = await User.findOne({ where: { email: req.body.email } });
 
     if (!userData) {
@@ -14,6 +15,7 @@ router.post('/login', async (req, res) => {
     }
 
     // TODO: Add a comment describing the functionality of this expression
+    // checking the password provided against database
     const validPassword = await userData.checkPassword(req.body.password);
 
     if (!validPassword) {
@@ -24,6 +26,7 @@ router.post('/login', async (req, res) => {
     }
 
     // TODO: Add a comment describing the functionality of this method
+    // saving the session if the user is logged in
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
@@ -39,6 +42,7 @@ router.post('/login', async (req, res) => {
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     // TODO: Add a comment describing the functionality of this method
+    // destroy the session at logout
     req.session.destroy(() => {
       res.status(204).end();
     });

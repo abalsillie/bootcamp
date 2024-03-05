@@ -1,3 +1,8 @@
+npm install
+npm install prettier eslint-config-prettier --save-dev
+adds to package.json devdependencies
+sibling to eslint, eslint tells you what's wrong, prettier fixes it
+
 # Prettier
 
 Developers tend to have a lot of opinions on how to format code. Do you use single quotes or double quotes for strings? Is it okay to have trailing commas on object properties? How often should you add spaces in between keywords? When should chained methods be moved to a new line?
