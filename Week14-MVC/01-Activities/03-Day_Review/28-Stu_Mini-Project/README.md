@@ -1,5 +1,15 @@
-npm i nodemon --save-dev
-npm run watch
+From main
+update .env file
+mysql -u root -p
+SOURCE db/schema.sql;
+SHOW databases;
+techblog_db should show in list
+exit
+npm i
+npm run seed
+npm run start
+
+
 
 # Module 14 Mini-Project: Crowdfunding App
 
