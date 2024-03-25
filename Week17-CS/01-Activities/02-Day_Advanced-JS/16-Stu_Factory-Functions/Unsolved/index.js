@@ -1,14 +1,16 @@
 // TODO: Fix the `greet` function so that it returns the correct values.
 function student(name, gradeYear) {
-  let studentInfo = {
-    name: name,
-    gradeYear: gradeYear,
+  const studentInfo = {
+    name,
+    gradeYear,
   };
 
   return {
-    greet: function () {
+    greet() {
       console.log(
-        `My name is ${this.name} and I am in ${this.gradeYear} grade`
+        `My name is ${studentInfo.name} and I am in ${studentInfo.gradeYear} grade`
+        // 'this' refers to global variable, so won't work
+        // 'this' refers to greet function
       );
     },
   };
