@@ -1,14 +1,9 @@
-// 1) Where is carNoise stored?
-// Global execution context (GEC)
+// 1) Where is carNoise stored? // global
 const carNoise = 'Honk';
-// 2) Where is goFast stored?
-// Global execution context (GEC)
+// 2) Where is goFast stored? // global
 const goFast = speed => {
-  // 4) When is speed assigned a value? Where is this value stored?
-  // When goFast is invoked, the argument of the function is assigned to the parameter, speed, 
-  // in the functional execution context of goFast
-  // 5) Where is makeNoise stored?
-  // makeNoise is stored in the function execution context of goFast
+  // 4) When is speed assigned a value? Where is this value stored? // function envoked, speed passed in
+  // 5) Where is makeNoise stored? // in the function goFast
   const makeNoise = sound => {
     // carNoise is then assigned to sound in the function execution context of makeNoise
     // console.log is then placed on the call stack which then logs the statement
@@ -21,7 +16,7 @@ const goFast = speed => {
 }
 
 // 3) What happens in the following statement?
-// Since confirm is a Web API, once it resolves, goFast() is placed in the callback queue, then onto the call stack to be executed.
+// confirm is a pop up Web API, if true, calls goFast func, added to stack
 if(confirm("Do you want to go fast?")) {
-  goFast(80);
+  goFast(80); // function envoked, speed passed in
 }

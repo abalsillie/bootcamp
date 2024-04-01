@@ -32,7 +32,6 @@ myBank.displayFunds(); // myBank is an object
 console.dir(myBank);
 
 // By console logging the outer function's variable we can see that the variables are not able to be accessed.
+// will print error because variables only exist inside function
 console.log(checking);
 console.log(savings);
-
-// will print error because variables only exist inside function

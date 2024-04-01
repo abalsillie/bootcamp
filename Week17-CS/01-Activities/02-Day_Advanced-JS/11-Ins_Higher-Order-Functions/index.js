@@ -1,19 +1,18 @@
 const arrayIndex = [1, 52, 35, 6, 72, 7, 3, 19, 32, 54, 78, 95, 97];
 
-// Create a function which accepts two arguments, number and index.
-// The index of the array is provided to us because we will pass this function through .map array method.
-function evenIndexMultiplier(number, index) {
-  // Checking to see if we are on an even index inside of the array we are mapping through.
-  if (index % 2 === 0) {
-    // Multiply the number on the even index by 10.
-    return number * 10;
+function evenIndexMultiplier(number, index) { // func takes in number and index parametres
+  if (index % 2 === 0) { // if remainder = 0 when divided by 2 therefore even
+    return number * 10; // return this number x 10
   }
-
-  // Return the number if it is on an odd index.
-  return number;
+  return number; // else if odd, return that number
 }
 
-// Create a new variable to store our newly mapped array with our `evenIndexMultiplier` function passed through it.
-const evenIndexes = arrayIndex.map(evenIndexMultiplier);
+const evenIndexes = arrayIndex.map(evenIndexMultiplier); // pass array through .map method, store in variable, only even indecies
 
-console.log(evenIndexes);
+console.log(evenIndexes); // log the new array
+
+// [
+//   10, 52, 350,   6, 720,
+//    7, 30,  19, 320,  54,
+//  780, 95, 970
+// ]
