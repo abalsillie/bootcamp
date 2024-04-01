@@ -3,20 +3,20 @@
 function createUser(name, age, city) { // name, age and city parametres must be used in this func
     // Create an user object and map the function arguments to a key in the object.
     const user = {
-        name: name,
-        age: age,
-        city: city
+        name,
+        age,
+        city
     } // user object, privacy means cannot be accessed outside this function
 
     // example of closure
     // Return two inner functions.
     return { // returns object with 2 functions, introduce and location
-        introduceSelf: function() {
+        introduceSelf() {
             // Instead of using the `this` keyword, we use the object we created in the outer function's scope.
             return console.log(`Hi my name is ${user.name} and I am currently ${user.age} years old!`)
         },
 
-        location: function() {
+        location() {
             return console.log(`${user.name} is located in ${user.city}`)
         }
     }

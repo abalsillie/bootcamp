@@ -2,7 +2,7 @@ const avg = require("../index");
 
 describe("The average function", () => {
   test("can find the average of the array", () => {
-    expect(avg([10, 20, 30, 40, 50, 30])).toBe(30);
+    expect(avg([10, 20, 30, 40, 50, 30])).toBe(30); // expects avg to be 30
   });
 
   test("can find the average of the negative numbers in an array", () => {

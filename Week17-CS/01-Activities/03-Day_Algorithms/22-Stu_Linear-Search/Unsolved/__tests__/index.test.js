@@ -13,3 +13,5 @@ test('linearSearch should return -1 because 5643 is not in the array', () => {
   let testArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   expect(linearSearch(testArray, 5643)).toEqual(-1);
 });
+
+// 
