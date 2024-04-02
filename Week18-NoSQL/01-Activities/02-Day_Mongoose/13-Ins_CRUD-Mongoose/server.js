@@ -9,10 +9,12 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// CRUD operations- create, update, delete
+
 // Creates a new department
 app.post('/new-department/:department', (req, res) => {
-  const newDepartment = new Department({ name: req.params.department });
-  newDepartment.save();
+  const newDepartment = new Department({ name: req.params.department }); // creates new const, name coming from department params
+  newDepartment.save(); // saves in db
   if (newDepartment) {
     res.status(201).json(newDepartment);
   } else {
@@ -25,7 +27,7 @@ app.post('/new-department/:department', (req, res) => {
 app.get('/all-departments', async (req, res) => {
   try {
     // Using model in route to find all documents that are instances of that model
-    const result = await Department.find({});
+    const result = await Department.find({}); // find all departments
     res.status(200).json(result);
   } catch (err) {
     console.log('Uh Oh, something went wrong');
@@ -37,7 +39,7 @@ app.get('/all-departments', async (req, res) => {
 app.get('/find-wine-department', async (req, res) => {
   try {
     // Using model in route to find all documents that are instances of that model
-    const result = await Department.findOne({ name: 'Wine' });
+    const result = await Department.findOne({ name: 'Wine' }); // find first instance for filter condition, pass in name 'Wine', will return first department with name of wine
     res.status(200).json(result);
   } catch (err) {
     console.log('Uh Oh, something went wrong');
@@ -47,9 +49,9 @@ app.get('/find-wine-department', async (req, res) => {
 
 // Finds first document matching parameter and deletes
 // For demo, use 'Wine' as URL param
-app.delete('/find-one-delete/:departmentName', async (req, res) => {
+app.delete('/find-one-delete/:departmentName', async (req, res) => { 
   try {
-    const result = await Department.findOneAndDelete({ name: req.params.departmentName });
+    const result = await Department.findOneAndDelete({ name: req.params.departmentName }); // find the first instance and delete it, name coming from department params
     res.status(200).json(result);
     console.log(`Deleted: ${result}`);
   } catch (err) {

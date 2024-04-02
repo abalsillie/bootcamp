@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
 // TODO: Add a comment describing the functionality of the code below
-const bookSchema = new mongoose.Schema({
-  title: { type: String, required: true },
+const bookSchema = new mongoose.Schema({ // create bookSchema, new instance of schema
+  title: { type: String, required: true }, // defining the model/ columns and the input
   author: { type: String, required: false },
   publisher: String,
   stockCount: Number,
@@ -12,12 +12,12 @@ const bookSchema = new mongoose.Schema({
 });
 
 // TODO: Add a comment describing the functionality of the code below
-const Book = mongoose.model('Book', bookSchema);
+const Book = mongoose.model('Book', bookSchema); // triggering the schema, 'Book' is the name of the schema, put inside book var
 
 const handleError = (err) => console.error(err);
 
 // TODO: Add a comment describing the functionality of the code below
-Book
+Book // book.create seeds the database
   .create({
     title: 'Diary of Anne Frank',
     author: 'Anne Frank',
@@ -32,7 +32,7 @@ Book
 // TODO: Add a comment describing the difference between this instance being created
 // and the instance that was created above
 Book
-  .create({
+  .create({ // creates a new book, only have to input title
     title: 'Oh the Places You Will Go!',
     author: 'Dr. Seuss'
   })
@@ -46,3 +46,4 @@ Book.create({ title: 'Harold and the Purple Crayon' })
   .catch(err => handleError(err));
 
 module.exports = Book;
+// export book for use

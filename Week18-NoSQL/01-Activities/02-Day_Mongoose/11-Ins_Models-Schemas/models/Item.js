@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 
 // Create a new instance of the Mongoose schema to define shape of each document
-const grocerySchema = new mongoose.Schema({
+const grocerySchema = new mongoose.Schema({ // creating a schema (table), stored against grocerySchema
   // Add individual properties and their types
   // Setting required to true will disallow null values
   item: { type: String, required: true },
@@ -10,7 +10,7 @@ const grocerySchema = new mongoose.Schema({
   price: Number,
   inStock: Boolean,
   // Use built in date method to get current date
-  lastAccessed: { type: Date, default: Date.now },
+  lastAccessed: { type: Date, default: Date.now }, // syntax for designing a table
 });
 
 // Using mongoose.model() to compile a model based on the schema

@@ -9,10 +9,10 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.get('/all-items', async (req, res) => {
+app.get('/all-items', async (req, res) => { // all items
   try {
     // Using model in route to find all documents that are instances of that model
-    const result = await Item.find({});
+    const result = await Item.find({}); // empty object to find all
     res.status(200).json(result);
   } catch (err) {
     res.status(500).send({ message: 'Internal Server Error' })
