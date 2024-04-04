@@ -12,3 +12,6 @@ router.route('/').get(getComments).post(createComment);
 router.route('/:commentId').get(getSingleComment);
 
 module.exports = router;
+
+// syntax is express
+// routes get requests to correct area

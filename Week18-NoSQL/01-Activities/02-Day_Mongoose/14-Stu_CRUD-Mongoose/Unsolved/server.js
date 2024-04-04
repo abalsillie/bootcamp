@@ -25,7 +25,7 @@ app.post('/new-genre/:genre', (req, res) => {
 app.get('/all-genres', async (req, res) => {
   try {
     // Using model in route to find all documents that are instances of that model
-    const result = await Genre.find({});
+    const result = await Genre.find({}); // find method to find all genres
     res.status(200).json(result);
   } catch (err) {
     console.log('Uh Oh, something went wrong');
@@ -45,7 +45,7 @@ app.get('/find-kids-genre', async (req, res) => {
 });
 
 // Finds first document that matches and deletes
-app.delete('/find-one-delete/:genre', async (req, res) => {
+app.delete('/find-one-delete/:genre', async (req, res) => { // find one and delete method
   try {
     const result = await Genre.findOneAndDelete({ name: req.params.genre });
     res.status(200).json(result);
@@ -58,8 +58,18 @@ app.delete('/find-one-delete/:genre', async (req, res) => {
 
 app.put('/find-one-update/:genre', async (req, res) => {
   // TODO: Write a route that will find the first instance of a document that contains a name with the value equal to 'Kids'
-  // Update that name with the value given from the URL param
-  // Return the updated document
+  try {
+    const result = await Genre.findOneAndUpdate(
+      { name: 'Kids' }, // find first document with name kids
+      { name: req.params.genre }, // update that name with the value given from the URL param
+      { new: true } // return the updated document
+      );
+    res.status(200).json(result); // return the updated document
+    console.log(`Deleted: ${result}`);
+  } catch (err) {
+    console.log('Uh Oh, something went wrong');
+    res.status(500).json({ message: 'something went wrong' });
+  }
 });
 
 db.once('open', () => {

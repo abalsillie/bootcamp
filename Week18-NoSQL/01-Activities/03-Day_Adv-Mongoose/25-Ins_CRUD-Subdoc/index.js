@@ -21,3 +21,6 @@ db.once('open', () => {
     console.log(`API server for ${activity} running on port ${PORT}!`);
   });
 });
+
+// GET request http://localhost:3001/api/users
+// POST request http://localhost:3001/api/videos/

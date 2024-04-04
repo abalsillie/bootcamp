@@ -1,3 +1,10 @@
+- repo code and video only, no deployed link
+- users have thoughts- CRUD method for thoughts
+- add reactions, edit, delete reactions
+- add and remove friends
+- users - thoughts - reactions, friends (other users)
+
+
 # 18 NoSQL: Social Network API
 
 ## Your Task

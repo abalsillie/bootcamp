@@ -12,8 +12,10 @@ module.exports = {
   },
   async getSinglePost(req, res) {
     try {
-      const post = await Post.findOne({ _id: req.params.postId });
-
+      const post = await Post.findOne({ _id: req.params.postId }) // find a singular tag
+      // find one means we are searching a singular tag
+        .populate({ path : 'tags', select: '-__v'}); // populate the tags path, don't give me the version property
+        
       !post
         ? res.status(404).json({ message: 'No post with that ID' })
         : res.json(post);

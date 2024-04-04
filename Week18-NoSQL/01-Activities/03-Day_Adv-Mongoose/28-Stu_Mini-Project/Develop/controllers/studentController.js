@@ -5,8 +5,9 @@ const { Student, Course } = require('../models');
 // TODO: Create an aggregate function to get the number of students overall
 const headCount = async () => {
   // Your code here
-  const numberOfStudents = await Student.aggregate();
+  const numberOfStudents = await Student.aggregate().count('headCount'); // aggregate has empty pipeline, has stages it must go through
   return numberOfStudents;
+  // GET REQUEST http://localhost:3001/api/students
 }
 
 // Execute the aggregate method on the Student model and calculate the overall grade by using the $avg operator
@@ -15,14 +16,20 @@ const grade = async (studentId) =>
     // TODO: Ensure we include only the student who can match the given ObjectId using the $match operator
     {
       // Your code here
+      // find single student inside aggregation pipeline
+      $match: { _id: new ObjectId(studentId) }, // need new as creating new objectid
     },
-    {
-      $unwind: '$assignments',
+    { // unwind assignments property- turning one student object into x assignment objects
+      $unwind: '$assignments', // turns an array into single documents
     },
     // TODO: Group information for the student with the given ObjectId alongside an overall grade calculated using the $avg operator
     {
       // Your code here
-    },
+      $group: { // grouping info back together by id to create an average
+        _id: new ObjectId(studentId), // need new as creating new objectid
+        averageGrade: { $avg: '$assignments.score'},
+      },
+    }, // averageGrade is new element, $avg is average operator
   ]);
 
 module.exports = {

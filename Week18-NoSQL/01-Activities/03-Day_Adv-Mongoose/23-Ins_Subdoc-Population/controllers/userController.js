@@ -11,9 +11,9 @@ module.exports = {
   },
   async getSingleUser(req, res) {
     try {
-      const user = await User.findOne({ _id: req.params.userId })
-        .select('-__v')
-        .populate('posts');
+      const user = await User.findOne({ _id: req.params.userId }) // require params by userID
+        .select('-__v') // don't give virtual param
+        .populate('posts'); // populating post property
 
       if (!user) {
         return res.status(404).json({ message: 'No user with that ID' });

@@ -10,7 +10,7 @@ const bookSchema = new mongoose.Schema({
   publisher: String,
   stockCount: Number,
   price: Number,
-  inStock: Boolean,
+  inStock: Boolean, // in stock = true will be our matching criteria
   // Use built in date method to get current date
   lastAccessed: { type: Date, default: Date.now },
 });

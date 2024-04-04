@@ -15,9 +15,9 @@ app.get('/sum-price', async (req, res) => {
     const result = await Item
       .aggregate([
         // Where prices are less or equal to 5
-        { $match: { price: { $lte: 5 } } },
-        {
-          $group: {
+        { $match: { price: { $lte: 5 } } }, // stage 1
+        { // AND THEN
+          $group: { // stage 2
             // Group by null (no additional grouping by id)
             _id: null,
             // Sum of all prices
