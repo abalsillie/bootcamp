@@ -23,12 +23,13 @@ module.exports = {
     }
   },
   // create a new post
+  // create post model, posting in req body
   async createPost(req, res) {
     try {
       const post = await Post.create(req.body);
       const user = await User.findOneAndUpdate(
-        { _id: req.body.userId },
-        { $addToSet: { posts: post._id } },
+        { _id: req.body.userId }, // find post based on user ID
+        { $addToSet: { posts: post._id } }, // adds new property into array if doesn't exist
         { new: true }
       );
 

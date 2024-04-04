@@ -9,7 +9,7 @@ const userSchema = new Schema(
     posts: [
       {
         type: Schema.Types.ObjectId,
-        ref: 'post',
+        ref: 'post', // only store key to document, tell mongoose to fill in db using user id
       },
     ],
   },

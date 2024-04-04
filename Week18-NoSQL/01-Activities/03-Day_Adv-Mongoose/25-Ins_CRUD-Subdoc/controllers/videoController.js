@@ -28,8 +28,8 @@ module.exports = {
       const video = await Video.create(req.body);
       const user = await User.findOneAndUpdate(
         { _id: req.body.userId },
-        { $addToSet: { videos: video._id } },
-        { new: true }
+        { $addToSet: { videos: video._id } }, // for given array (videos) add in new element (video id), if doesn't exist
+        { new: true } // give me back the user after created, new = true
       );
 
       if (!user) {

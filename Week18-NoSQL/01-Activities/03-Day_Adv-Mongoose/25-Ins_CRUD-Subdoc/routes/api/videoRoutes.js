@@ -7,7 +7,7 @@ const {
   deleteVideo,
   addVideoResponse,
   removeVideoResponse,
-} = require('../../controllers/videoController');
+} = require('../../controllers/videoController'); // populating all routes from controllers, videocontroller.js
 
 // /api/videos
 router.route('/').get(getVideos).post(createVideo);
@@ -17,12 +17,12 @@ router
   .route('/:videoId')
   .get(getSingleVideo)
   .put(updateVideo)
-  .delete(deleteVideo);
+  .delete(deleteVideo); // get, put and delete routes
 
 // /api/videos/:videoId/responses
-router.route('/:videoId/responses').post(addVideoResponse);
+router.route('/:videoId/responses').post(addVideoResponse); // response
 
 // /api/videos/:videoId/responses/:responseId
-router.route('/:videoId/responses/:responseId').delete(removeVideoResponse);
+router.route('/:videoId/responses/:responseId').delete(removeVideoResponse); // deletion
 
 module.exports = router;

@@ -15,8 +15,11 @@ const postSchema = new Schema(
   }
 );
 
+// user stores first and last name
+// options are to concat first and last or store first and last together as it's own var
+// OR
 // Create a virtual property `commentCount` that gets the amount of comments per post
-postSchema.virtual('commentCount').get(function () {
+postSchema.virtual('commentCount').get(function () { // commentCount function is a virtual property
   return this.comments.length;
 });
 

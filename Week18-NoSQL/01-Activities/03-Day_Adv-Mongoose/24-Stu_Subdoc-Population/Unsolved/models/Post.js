@@ -13,7 +13,7 @@ const postSchema = new Schema(
     },
     tags: [
       {
-        type: 'Tag',
+        type: Schema.Types.ObjectId, // post needs to refer with what key should be, populate correctly using mongoose
         ref: 'Tag',
       },
     ],
