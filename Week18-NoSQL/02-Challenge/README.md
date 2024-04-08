@@ -1,9 +1,11 @@
-- repo code and video only, no deployed link
-- users have thoughts- CRUD method for thoughts
-- add reactions, edit, delete reactions
-- add and remove friends
-- users - thoughts - reactions, friends (other users)
-
+- repo code and video only
+- users have thoughts and friends, thoughts have reactions- CRUD method
+- seed the database
+- server starts and syncs to MongoDB
+- GET: users, thoughts (all/ single)
+- POST (create): users, thoughts, reactions, friends
+- PUT (update): users, thoughts
+- DELETE: users, thoughts, reactions, friends
 
 # 18 NoSQL: Social Network API
 
