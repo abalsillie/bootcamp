@@ -1,7 +1,9 @@
 const { Post, Comment } = require('../models');
+// bring in our models, exporting functions
 
+// exported functions
 module.exports = {
-  async getComments(req, res) {
+  async getComments(req, res) { // take in requests and responses
     try {
       const comment = await Comment.find();
       res.json(comment);

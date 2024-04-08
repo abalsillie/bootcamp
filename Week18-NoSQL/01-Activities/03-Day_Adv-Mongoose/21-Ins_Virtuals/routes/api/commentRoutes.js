@@ -5,7 +5,8 @@ const {
   createComment,
 } = require('../../controllers/commentController');
 
-// /api/comments
+// for home route, if GET route run getComments, if POST route, run createComment
+// getComments and createComments come from controllers
 router.route('/').get(getComments).post(createComment);
 
 // /api/comments/:commentId
@@ -13,5 +14,4 @@ router.route('/:commentId').get(getSingleComment);
 
 module.exports = router;
 
-// syntax is express
-// routes get requests to correct area
+// all syntax is express
