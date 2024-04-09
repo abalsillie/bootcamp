@@ -12,12 +12,15 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
   },
 
+  // npm i workbox-webpack-plugin
+  // plugin functionality
   plugins: [
     new HtmlWebpackPlugin({
       template: './index.html',
       title: 'Webpack Plugin',
     }),
     new MiniCssExtractPlugin(),
+    new WorkboxPlugin.GenerateSW()
   ],
   module: {
     rules: [

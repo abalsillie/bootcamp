@@ -18,8 +18,8 @@
     "concurrently": "^5.2.0"
   },
   "comments": {
-    "comment-start:dev": "TODO: Add your comment about start:dev script inside these quotes",
-    "comment-concurrently": "TODO: Add your comment about concurrently inside these quotes"
+    "comment-start:dev": "launches concurrently client and server",
+    "comment-concurrently": "at the same time"
   }
 }
 
