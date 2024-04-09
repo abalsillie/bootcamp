@@ -18,3 +18,6 @@ if (module.hot) {
     }
   });
 }
+
+// accept module.hot changes
+// HMR is an opt-in feature
