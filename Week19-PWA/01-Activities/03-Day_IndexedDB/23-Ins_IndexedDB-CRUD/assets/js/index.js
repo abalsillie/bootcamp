@@ -23,7 +23,7 @@ const fetchList = async () => {
   let listItem = ` `;
 
   // Loop through the data and create the contact listItem
-  for (let data of result) {
+  for (let data of result) { // runs loop for these items
     console.log(data);
     listItem += `
     <div class="flex-row align-center justify-space between" id="${data.id}">
