@@ -17,19 +17,19 @@ export const postDb = async (content) => {
   console.log('Post to the database');
 
   // Create a connection to the database database and version we want to use.
-  const todosDb = await openDB('todos', 1);
+  const todosDb = await openDB('todos', 1); // create todos db version 1
 
   // Create a new transaction and specify the database and data privileges.
-  const tx = todosDb.transaction('todos', 'readwrite');
+  const tx = todosDb.transaction('todos', 'readwrite'); // creating new transaction called todos, allowing us to read and write
 
   // Open up the desired object store.
   const store = tx.objectStore('todos');
 
   // Use the .add() method on the store and pass in the content.
-  const request = store.add({ todo: content });
+  const request = store.add({ todo: content }); // adding values to the store, content is what user provides
 
   // Get confirmation of the request.
-  const result = await request;
+  const result = await request; // storing
   console.log('Data saved to the database', result);
 };
 
@@ -57,7 +57,7 @@ export const getAllDb = async () => {
 
 // Export a function we will use to GET from the database.
 export const getOneDb = async (id) => {
-  console.log('GET from the database');
+  console.log('GET from the database'); // reading single item
 
   // Create a connection to the database database and version we want to use.
   const todosDb = await openDB('todos', 1);
