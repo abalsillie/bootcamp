@@ -1,4 +1,4 @@
-function ReactList() {
+function ReactList() { // func returning html, react is like handlebars on steroids
   return (
     <ul>
       <li>Create Responsive Single-Page Applications</li>

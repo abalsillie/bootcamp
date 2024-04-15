@@ -14,11 +14,13 @@ const styles = {
     padding: '0 20px',
   },
 };
+// declare style object, input css inside a js object styles
 
 // In Navbar, we can assign a style from an object by using curly braces
 function Navbar() {
   return (
     <div style={styles.card}>
+      {/* styles.card refers to card inside styles object */}
       <div style={styles.heading}>Home</div>
     </div>
   );
