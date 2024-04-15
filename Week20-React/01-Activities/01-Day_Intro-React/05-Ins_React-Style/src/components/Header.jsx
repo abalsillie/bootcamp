@@ -4,6 +4,7 @@ import '../styles/Header.css';
 function Header() {
   return (
     <header className="header">
+      {/* refer directly to css class */}
       <h1>Home</h1>
     </header>
   );

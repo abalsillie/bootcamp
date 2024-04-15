@@ -12,3 +12,7 @@ function App() {
 }
 
 export default App;
+
+// style prop
+// now defining own props
+// alert prop has type prop and message prop

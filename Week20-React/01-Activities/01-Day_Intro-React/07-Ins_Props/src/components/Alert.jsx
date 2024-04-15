@@ -12,3 +12,7 @@ function Alert(props) {
 }
 
 export default Alert;
+
+// props are key value pairs- type and message
+// props can be used anywhere
+// props can be anything- string, number, array, function, another component

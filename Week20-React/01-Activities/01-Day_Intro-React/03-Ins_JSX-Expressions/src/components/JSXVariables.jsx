@@ -1,3 +1,5 @@
+// file will be transpilated to make sense to browser
+
 const name = 'Mac';
 const num1 = 1;
 const num2 = 2;
@@ -9,12 +11,14 @@ function JSXVariables() {
         <div className="p-5 mb-4 bg-light">
           {/* JavaScript expressions can be escaped inside of curly braces */}
 
+          {/* name variable saved above, js */}
           <h2>My cat's name is {name}. But you can call me...</h2>
           <h1>The JSX Boss!</h1>
           <hr />
           <h2>I can do math: {num1 + num2}.</h2>
           <h2>
             I can generate random numbers:
+            {/* js inside curly wurlys */}
             {Math.floor(Math.random() * 10) + 1},
             {Math.floor(Math.random() * 10) + 1},
             {Math.floor(Math.random() * 10) + 1}.
