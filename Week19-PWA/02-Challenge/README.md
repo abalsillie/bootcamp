@@ -1,3 +1,12 @@
+- using indexed db, manifest, service worker
+- deployed using render: https://coding-boot-camp.github.io/full-stack/render/render-deployment-guide
+- works without internet connection
+- npm run build- both client and server have to run
+- client side loads with no errors
+- can type text in top line, when click install it downloads
+// npm i
+// npm run build installs dist file
+
 # 19 Progressive Web Applications (PWA): Text Editor
 
 ## Your Task
