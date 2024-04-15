@@ -1,3 +1,10 @@
+- web app is anything we can open in our browser (front end and back end)
+- npm run build
+- open in live server
+- light house in dev tools
+- "analyse" page
+- shows report on page performance and interactivity
+
 # Instructor Demo: Lighthouse
 
 * In order to demonstrate the functionality of Lighthouse, you will use the `10-Stu_Webpack-Plugin` activity.
