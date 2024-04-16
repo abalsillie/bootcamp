@@ -10,19 +10,19 @@ function Greeting() {
       <div className="list-group">
         {/* TODO: Resolve the issue so that the welcomeStudent function properly alerts the name of the selected student when the button is clicked. */}
         <button 
-          onClick={welcomeStudent('Mary')} 
-          className="list-group-item list-group-item-action"
+          onClick={() => welcomeStudent('Mary')}  // on click calling func and sending the name
+          className="list-group-item list-group-item-action" // func was immediately invoked, not envoked on click, so turn into callback function/ arrow
         >
             Mary
         </button>
         <button 
-          onClick={welcomeStudent('Cole')} 
+          onClick={() => welcomeStudent('Cole')} 
           className="list-group-item list-group-item-action"
         >
             Cole
         </button>
         <button 
-          onClick={welcomeStudent('Rebecca')} 
+          onClick={() => welcomeStudent('Rebecca')} 
           className="list-group-item list-group-item-action"
         >
             Rebecca

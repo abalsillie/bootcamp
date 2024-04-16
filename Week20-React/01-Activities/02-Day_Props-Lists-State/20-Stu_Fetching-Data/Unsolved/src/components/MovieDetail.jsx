@@ -1,4 +1,4 @@
-function MovieDetail(props) {
+function MovieDetail(props) { // card for single movie 
   return (
     <div className="text-center">
       <img

@@ -13,7 +13,7 @@ export default function Display() {
         parseInt(storedCount)
       )
     }
-  }, [])
+  }, []) // dependency array, when what's in array changes, useEffect will run again
 
   // When the state changes run this callback
   useEffect(() => {
@@ -23,11 +23,11 @@ export default function Display() {
 
   const handleIncrease = () => {
     setCount(count + 1);
-  };
+  }; // sets count plus one, because this changed, useEffect should run
 
   const clearStorage = () => {
     localStorage.clear();
-    setCount(0);
+    setCount(0); // clears storage and sets count back to 0
   }
 
   return (
@@ -37,9 +37,11 @@ export default function Display() {
       <hr />
       <button type="button" onClick={handleIncrease}>
         Click Me
+        {/* click me button triggers handleIncrease function */}
       </button>
       <button type="button" onClick={clearStorage}>
         Reset Count
+        {/* reset count button triggers clearStorage func */}
       </button>
     </div>
   );

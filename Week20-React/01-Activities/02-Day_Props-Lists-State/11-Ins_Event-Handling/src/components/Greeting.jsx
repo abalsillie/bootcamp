@@ -9,7 +9,7 @@ function Greeting(props) {
       <div className="list-group">
         {/* In React, we can directly attach event listeners to the to the relevant markup */}
         <button 
-          onClick={props.clickHandler} 
+          onClick={props.clickHandler} // property refers to event handler
           className="list-group-item list-group-item-action list-group-item-info" 
           aria-current="true"
         >
