@@ -12,26 +12,28 @@ const OmdbContainer = () => {
   const [search, setSearch] = useState('');
 
   // When the search form is submitted, use the API.search method to search for the movie(s)
-  const searchMovie = (query) =>
-    API.search(query)
-      .then((res) => {
-        setResult(res.data)
-        setSearch('')
+  const searchMovie = (query) => // search movie, query
+    API.search(query) // async func
+      .then((res) => { // .then
+        setResult(res.data) // renders search
+        setSearch('') // set to empty string once search complete
       })
       .catch((err) => console.log(err));
 
   // TODO: Fix the useEffect hook running after every state change
   useEffect(() => {
     searchMovie('The Matrix');
-  });
+  }, []); // searches for movie the matrix being passed, no dependency being used, rendering every time
+  // add empty array so only runs once
 
   // TODO: Fix the handleInputChange function
-  const handleInputChange = (e) => console.log(e.target.value);
+  const handleInputChange = (e) => console.log(e.target.value); // console log for search item
+  // setSearch state when
 
   // TODO: Fix the handleFormSubmit function not actually searching for the movie
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    setSearch(e.target.value);
+    searchMovie(search);
   };
 
   // Destructure the result object to make the code more readable, assign them to empty strings to start
@@ -41,7 +43,7 @@ const OmdbContainer = () => {
     Director = '',
     Genre = '',
     Released = '',
-  } = result;
+  } = result; // destructured result, used inside jsx below
 
   /* Fall back to default header if `Title` is undefined
   Does `Title` exist? If so, render the `MovieDetail` card 
@@ -69,7 +71,7 @@ const OmdbContainer = () => {
           <Card heading="Search">
             <SearchForm
               value={search}
-              handleInputChange={handleInputChange}
+              handleInputChange={handleInputChange} // passed in as props to the search func
               handleFormSubmit={handleFormSubmit}
             />
           </Card>

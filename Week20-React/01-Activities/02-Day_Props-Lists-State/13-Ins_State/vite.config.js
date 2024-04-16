@@ -9,3 +9,5 @@ export default defineConfig({
     open: true
   }
 })
+
+// shouldn't ever modify props

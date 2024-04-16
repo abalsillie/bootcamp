@@ -12,8 +12,8 @@ function App() {
   };
 
   // welcomeClass is being passed to the Greeting component as props
-  return <Greeting clickHandler={welcomeClass} />;
-}
+  return <Greeting clickHandler={welcomeClass} />; // func has prop to greeting, clickHandler
+} // can pass in variables or functions
 
 // Here we export the App component so that it can be made available in `main.jsx`
 export default App;

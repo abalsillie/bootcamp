@@ -3,7 +3,7 @@ import Greeting from "./components/Greeting";
 
 // Our App component returns the Greeting component
 function App() {
-  return <Greeting />;
+  return <Greeting />; // app calling greeting component
 }
 
 export default App;
