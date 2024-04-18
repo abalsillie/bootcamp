@@ -12,19 +12,19 @@ import About from './pages/About';
 import Blog from './pages/Blog';
 
 // Define the accessible routes, and which components respond to which URL
-const router = createBrowserRouter([
+const router = createBrowserRouter([ // takes in array of object determining the path
   {
-    path: '/',
-    element: <App />,
+    path: '/', // react router monitors address bar to see what needs to be rendered
+    element: <App />, // home element
     errorElement: <Error />,
     children: [
       {
         index: true,
-        element: <Home />,
+        element: <Home />, // home is children, rendered inside app as default
       },
       {
         path: '/About',
-        element: <About />,
+        element: <About />, // react router detects /about, will render about
       },
       {
         path: '/Blog',
