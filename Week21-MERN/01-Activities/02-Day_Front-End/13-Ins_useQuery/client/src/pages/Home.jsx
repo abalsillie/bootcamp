@@ -7,14 +7,15 @@ import ProfileForm from '../components/ProfileForm';
 // Important for useQuery: We import the specific query we'd like to perform from our queries.js utility
 import { QUERY_PROFILES } from '../utils/queries';
 
-const Home = () => {
+const Home = () => { // home is functional component
   // Important for useQuery: We pass the query we'd like to execute on component load to the useQuery hook
   // The useQuery hook will always give back an object, and for the purposes of this app we're using the loading boolean and the data object
   // If you ran this query within the GraphQL playground, the data object would match the result
-  const { loading, data } = useQuery(QUERY_PROFILES);
+  const { loading, data } = useQuery(QUERY_PROFILES); // use query hook, passing in query to use
+  // destructuring loading and data
   
   // Important for useQuery: We use the optional chaining operator to get the resulting profile from our query, or fallback to an empty array if the query isn't resolved yet
-  const profiles = data?.profiles || [];
+  const profiles = data?.profiles || []; // empty array
 
   return (
     <main>
@@ -28,10 +29,10 @@ const Home = () => {
 
         <div className="col-12 col-md-10 my-3">
           {loading ? (
-            <div>Loading...</div>
+            <div>Loading...</div> // if loading return div loading
           ) : (
-            <ProfileList
-              profiles={profiles}
+            <ProfileList // once loading changes, reloads and reruns the func to now contain profiles
+              profiles={profiles} // if not, pass in profiles
               title="Here's the current roster of friends..."
             />
           )}
@@ -42,3 +43,5 @@ const Home = () => {
 };
 
 export default Home;
+
+// using to pass queries to graphql endpoint

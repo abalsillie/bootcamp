@@ -11,10 +11,10 @@ const Home = () => {
   // Important for useQuery: We pass the query we'd like to execute on component load to the useQuery hook
   // The useQuery hook will always give back an object, and for the purposes of this app we're using the loading boolean and the data object
   // The data object will match the same result you'd get if you ran this query within the GraphQL playground
-  const { loading, data } = useQuery(QUERY_PROFILES);
-
+  const { loading, data } = useQuery(QUERY_PROFILES); // use query hook
+  // loading keeps current status, data returns data to be returned
   // Important for useQuery: We use the optional chaining operator to get the resulting profile from our query, or fallback to an empty object if the query isn't resolved yet
-  const profiles = data?.profiles || [];
+  const profiles = data?.profiles || []; // undefined, empty array
 
   return (
     <main>
@@ -31,7 +31,7 @@ const Home = () => {
             <div>Loading...</div>
           ) : (
             <ProfileList
-              profiles={profiles}
+              profiles={profiles} // state has changes, reload and load profiles, returning jsx
               title="Here's the current roster of friends..."
             />
           )}
