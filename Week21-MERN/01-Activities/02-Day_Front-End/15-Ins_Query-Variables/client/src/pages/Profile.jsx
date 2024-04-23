@@ -7,7 +7,7 @@ import SkillForm from '../components/SkillForm';
 import { QUERY_SINGLE_PROFILE } from '../utils/queries';
 
 const Profile = () => {
-  const { profileId } = useParams();
+  const { profileId } = useParams(); // takes params off the url
 
   const { loading, data } = useQuery(QUERY_SINGLE_PROFILE, {
     // Important for Query Variables: The useQuery hook is able to take a second argument which is where we will pass the query arguments needed to complete the request for a specific profile

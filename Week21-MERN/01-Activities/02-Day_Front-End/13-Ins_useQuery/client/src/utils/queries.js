@@ -11,6 +11,8 @@ export const QUERY_PROFILES = gql`
     }
   }
 `;
+// profiles query returns _id, name and skills
+// use gql and template literals for use
 
 export const QUERY_SINGLE_PROFILE = gql`
   query singleProfile($profileId: ID!) {
@@ -21,3 +23,5 @@ export const QUERY_SINGLE_PROFILE = gql`
     }
   }
 `;
+
+// pre-written queries, reference queries.js

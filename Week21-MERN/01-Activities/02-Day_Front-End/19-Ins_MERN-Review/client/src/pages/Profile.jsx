@@ -9,7 +9,7 @@ import SkillForm from '../components/SkillForm';
 import { QUERY_SINGLE_PROFILE } from '../utils/queries';
 
 const Profile = () => {
-  const { profileId } = useParams();
+  const { profileId } = useParams(); // pulls from address bar and deconstructs profileId
 
   // Important for useQuery: We pass the query we'd like to execute on component load to the useQuery hook
   // In this case, the query we want to run also requires query parameters to be passed, which we deliver as a variables object
@@ -19,7 +19,7 @@ const Profile = () => {
     // Important for Query Variables: The useQuery hook is able to take a second argument which is where we will pass the query arguments needed to complete the request for a specific profile
     // The second argument is passed as an object with a variables property
     // The variables object will receive each key matching the query definition in utils/queries.js, and the value we'd like to deliver to the server
-    variables: { profileId: profileId },
+    variables: { profileId: profileId }, // pass in vars
   });
 
   // Important for useQuery: We use the optional chaining operator to get the resulting profile from our query, or fallback to an empty object if the query isn't resolved yet

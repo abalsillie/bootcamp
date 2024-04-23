@@ -19,7 +19,7 @@ const ThoughtForm = () => {
       QUERY_PROFILES,
       'allProfiles'
     ]
-  });
+  }); // once add thought, refetch the QUERY profiles query
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
