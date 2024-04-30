@@ -10,14 +10,21 @@ export const useStudentContext = () => useContext(StudentContext);
 export const StudentProvider = ({ children }) => {
   const initialState = {
     students: [
+      {
+        id:1,
+        name: 'Pikachu',
+        major: 'Electricity'
+      }
       // TODO: Add two students with a `name`, `major` and `id` property
     ],
   };
 
   // TODO: Fill in the value prop for the provider
   return (
-    <StudentContext.Provider value={}>
+    <StudentContext.Provider value={initialState}>
+      {/* What provider you want the children to access */}
       {/* //TODO: Render the children from props */}
+      {children}
     </StudentContext.Provider>
   );
 };

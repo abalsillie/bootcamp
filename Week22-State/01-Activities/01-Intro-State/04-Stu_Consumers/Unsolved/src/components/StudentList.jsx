@@ -4,7 +4,7 @@ import { useStudentContext } from '../utils/StudentContext';
 
 export default function StudentList() {
   // TODO: Import the students, actions and majors from our custom useStudentContext hook
-
+  const { students, addStudent, removeStudent, majors } = useStudentContext();
   // Initialize state for new students and new student majors
   const [newStudentName, setNewStudentName] = useState('');
   const [newStudentMajor, setNewStudentMajor] = useState('');
