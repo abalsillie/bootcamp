@@ -1,3 +1,15 @@
+- allow books to be saved
+- add section for saved books where these books will show
+- can delete books from this list as well
+- add and remove books are graphql calls
+- book search with API call remains restful
+
+- refactor to be a GraphQL API built with Apollo Server
+- Set up an Apollo Server to use GraphQL queries and mutations to fetch and modify data, replacing the existing RESTful API
+- Modify the existing authentication middleware so that it works in the context of a GraphQL API
+- Create an Apollo Provider so that requests can communicate with an Apollo Server
+- Deploy to Render with a MongoDB database using MongoDB Atlas https://coding-boot-camp.github.io/full-stack/mongodb/deploy-with-render-and-mongodb-atlas
+
 # 21 MERN: Book Search Engine
 
 ## Your Task
@@ -252,3 +264,4 @@ You are required to submit BOTH of the following for review:
 
 ---
 © 2024 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+X

@@ -1,3 +1,10 @@
+JWT
+- header (algorythms)
+- payload (data, i.e. name)
+- signature (header concatonatted to the payload and hashed with secret)
+
+Used as an authentication token
+
 # Create JSON Web Token (Server-side)
 
 In this demo, you will create a profile and verify JSON Web Tokens to log into a profile.
